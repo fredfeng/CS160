@@ -8,7 +8,7 @@ The workloads include 5 programming assignments and a take-home midterm exam.
 # Office hour
 Instructor : Yu Feng (yufeng@UCSBCS)
 
-TA : Junrui Liu (junrui@UCSBCS)
+TA : Junrui Liu (junrui@UCSBCS) Peter Boyland (boyland@umail.ucsb.edu)
 
 Class: M,Wed, 9:15am, Zoom
 
