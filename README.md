@@ -52,7 +52,6 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 
   
 
-
 Below is a grading system used by CS160 (No curving).
 
 | Letter | Percentage |
@@ -70,15 +69,38 @@ Below is a grading system used by CS160 (No curving).
 Credit: https://en.wikipedia.org/wiki/Academic_grading_in_the_United_States
 
 
-### Submission
-1. Please submit your homework to gradescope: https://www.gradescope.com
+# Useful resources
+
+You will find the [Patina materials](https://junrui-liu.github.io/patina) very helpful during
+this course.
+
+These resources are helpful for learning OCaml:
+
+1. [OCaml From the Ground Up](https://ocamlbook.org/): this is a good
+   step-by-step introduction to OCaml.
+2. [Real World OCaml](https://dev.realworldocaml.org/guided-tour.html): a
+   comprehensive guide on OCaml: how to use it, the ecosystem and tooling, and
+   common libraries.
+3. [The OCaml system](https://ocaml.org/releases/4.11/htmlman/index.html): the
+   official user manual for OCaml. Part I is helpful for seeing examples of what
+   OCaml has to offer. You may also want to look at Part III, Chapter 17 for
+   information on how to use the debugger.
+4. [OCaml official documentation](https://ocaml.org/learn/)
+5. [Learning OCaml in Y mins](https://learnxinyminutes.com/docs/ocaml/)
 
 
-# Homework
-
-1. [Homework1](homework/hw1/hw1.md)
-2. [Homework2](homework/hw2/hw2.md)
-3. [Homework3](homework/hw3/hw3.md)
+# Academic Integrity
+- Cheating WILL be taken seriously. It is not fair toward honest students to take cheating lightly, nor is it fair to the cheater to let him/her go on thinking that cheating is a reasonable alternative in life.
+- The following is not considered cheating:
+   - discussing broad ideas about programming assignments in groups, without being at a computer (with code-writing and debugging done individually, later).
+- The following is considered cheating:
+   - discussing programming assignments with someone who has already completed the problem, or looking at their completed solution.
+   - looking at anyone else’s solution
+   - Previous versions of the class.
+   - leaving your code (for example in an online repository) visible to others, leading others to look at your solution.
+   - receiving, providing, or soliciting assistance from unauthorized sources during a test.
+- Programming assignments are not intended to be grade-makers, but to prepare you for the tests, which are the grade-makers. Cheating on the programming assignment is not only unethical, but shows a fundamental misunderstanding of the purpose of these assignments.
+- Penalties: First time: a zero for the assignment; Second time: an “F” in the course.
 
 
 
