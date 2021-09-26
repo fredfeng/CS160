@@ -14,7 +14,7 @@ Class: M,Wed, 9:15am, Zoom
 
 Instructor's office hour: Fri, 9am-10am
 
-TA's office hour: Mon, 4pm-5pm, Zoom, or by Appointment
+TA's office hour: Mon, 4pm-5pm, Zoom, or by Appointment (Peter Boyland Mon 5:30-6:30 - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09)
 
 Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3LowXdLf5sSyMQ
 
