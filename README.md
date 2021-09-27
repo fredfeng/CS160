@@ -80,6 +80,8 @@ Credit: https://en.wikipedia.org/wiki/Academic_grading_in_the_United_States
 You will find the [Patina materials](https://junrui-liu.github.io/patina) very helpful during
 this course.
 
+Textbook (Optional): Cooper, Keith, and Linda Torczon. Engineering a compiler.
+
 These resources are helpful for learning OCaml:
 
 1. [OCaml From the Ground Up](https://ocamlbook.org/): this is a good
