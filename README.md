@@ -8,13 +8,19 @@ The workloads include 5 programming assignments and a take-home midterm exam.
 # Office hour
 Instructor : Yu Feng (yufeng@UCSBCS)
 
-TA : Junrui Liu (junrui@UCSBCS) Peter Boyland (boyland@umail.ucsb.edu)
+TA : Junrui Liu (junrui@ucsb) Peter Boyland (boyland@umail.ucsb.edu)
 
 Class: M,Wed, 9:30am - 10:30am, Chemistry-1171
 
+Sections:
+- Tue 5-5:50pm, Phelps 3526
+- ~~Tue 7-7:50pm, Phelps 3526~~
+
 Instructor's office hour: Mon, 3pm-4pm
 
-TA's office hour: Mon, 4pm-5pm, Zoom, or by Appointment (Peter Boyland Mon 5:30-6:30 - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09)
+TA's office hour:
+- Peter Boyland: Mon 5:30-6:30 - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09
+- Junrui Liu: Thur 10am-11am, Phelps 3523
 
 Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3LowXdLf5sSyMQ
 
