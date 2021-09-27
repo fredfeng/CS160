@@ -27,7 +27,7 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 
 | Date  | Topic                                         | Slides | Read | Out | Due |
 |-------|-----------------------------------------------|--------|------|-----|-----|
-| 9/27  | Welcome & Course Overview                                  |  lec1     |      |     |     |
+| 9/27  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
 | 9/29  | OCaml Crash Course, Part I                                  |  lec2      |      |     |     |
 | 10/4  | OCaml Crash Course, Part II          |  lec3      |     |  [HW1](homework/hw1/hw1.md)   |    |
 | 10/6  | OCaml Crash Course, Part III             |  lec4      |     |  |     |
