@@ -19,7 +19,7 @@ Sections:
 Instructor's office hour: Mon, 3pm-4pm
 
 TA's office hour:
-- Peter Boyland: Mon 5:30-6:30 - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09
+- Peter Boyland: Mon 5:30-6:30 PM, Sat 10-11 AM - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09
 - Junrui Liu: Thur 10am-11am, Phelps 3523
 
 Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3LowXdLf5sSyMQ
