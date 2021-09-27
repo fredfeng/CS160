@@ -10,9 +10,9 @@ Instructor : Yu Feng (yufeng@UCSBCS)
 
 TA : Junrui Liu (junrui@UCSBCS) Peter Boyland (boyland@umail.ucsb.edu)
 
-Class: M,Wed, 9:15am, Zoom
+Class: M,Wed, 9:30am - 10:30am, Chemistry-1171
 
-Instructor's office hour: Fri, 9am-10am
+Instructor's office hour: Mon, 3pm-4pm
 
 TA's office hour: Mon, 4pm-5pm, Zoom, or by Appointment (Peter Boyland Mon 5:30-6:30 - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09)
 
