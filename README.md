@@ -29,7 +29,7 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 |-------|-----------------------------------------------|--------|------|-----|-----|
 | 9/27  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
 | 9/29  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 10/4  | OCaml Crash Course, Part II          |  lec3      |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
+| 10/4  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf)      |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
 | 10/6  | OCaml Crash Course, Part III             |  lec4      |     |  |     |
 | 10/11  | Lexical Analysis                |  lec5     |      |     |     |
 | 10/13 | Introduction to Parsing                           |  lec6     |      |   |     |
