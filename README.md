@@ -29,24 +29,24 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 |-------|-----------------------------------------------|--------|------|-----|-----|
 | 9/27  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
 | 9/29  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 10/4  | OCaml Crash Course, Part II          |  lec3      |     |  [HW1](homework/hw1/proj1.ml)   |    |
+| 10/4  | OCaml Crash Course, Part II          |  lec3      |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
 | 10/6  | OCaml Crash Course, Part III             |  lec4      |     |  |     |
 | 10/11  | Lexical Analysis                |  lec5     |      |     |     |
 | 10/13 | Introduction to Parsing                           |  lec6     |      |   |     |
-| 10/18 | More about Parsing                            |  lec7      |      | HW2      |  HW1  |
+| 10/18 | More about Parsing                            |  lec7      |      | AS2      |  AS1  |
 | 10/20 | Intermediate Representations                          |  lec8      |      |  |    |
 | 10/25 |    LLVMLite                      |  lec9      |     |     |   |
-| 10/27 |     Code Generation    | lec10        |      |   HW3 |  HW2  |
+| 10/27 |     Code Generation    | lec10        |      |   AS3 |  AS2  |
 | 11/1 |    Operational Semantics       | lec11        |      |    |  |
 | 11/3 | Type Checking I   |  lec12       |      |     |    |
-| 11/8 |  Type Checking II                     |  lec13       |      |  HW4   |  Hw3   |
+| 11/8 |  Type Checking II                     |  lec13       |      |  AS4   |  AS3   |
 | 11/10  |  Optimization   | lec14        |      | |     |
 | 11/15  | Midterm (take-home)|        |      |     |     |
-| 11/17  | Garbage Collection |        |      |  HW5   |  HW4   |
+| 11/17  | Garbage Collection |        |      |  AS5   |  AS4   |
 | 11/22 | Data Flow Analysis                       |         |       |     |     |
 | 11/24 | Control Flow Analysis                |        |      |     | |
 | 11/29 | Course Review        |         |      |     |    |
-| 12/1  | Final week, no class                                 |        |      |     |  HW5  |
+| 12/1  | Final week, no class                                 |        |      |     |  AS5  |
 
 
 # Grading
