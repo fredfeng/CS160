@@ -19,7 +19,7 @@ Sections:
 Instructor's office hour: Mon, 3pm-4pm
 
 TA's office hour:
-- Peter Boyland: Mon 5:30-6:30 PM, Sat 10-11 AM - https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09
+- Peter Boyland: Mon 5:30-6:30 PM, Sat 10-11 AM - [link](https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09)
 - Junrui Liu: Thur 10am-11am, Phelps 3523
 
 Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3LowXdLf5sSyMQ
@@ -29,7 +29,7 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 |-------|-----------------------------------------------|--------|------|-----|-----|
 | 9/27  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
 | 9/29  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 10/4  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf)      |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
+| 10/4  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf) [sec1](https://docs.google.com/presentation/d/1dn9KsnKd55hK6Nmzu2Y1w7sHjNQuuEo9mF4HHkJkhso/edit?usp=sharing)     |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
 | 10/6  | OCaml Crash Course, Part III             |  lec4      |     |  |     |
 | 10/11  | Lexical Analysis                |  lec5     |      |     |     |
 | 10/13 | Introduction to Parsing                           |  lec6     |      |   |     |
