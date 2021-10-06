@@ -13,8 +13,8 @@ TA : Junrui Liu (junrui@ucsb) Peter Boyland (boyland@umail.ucsb.edu)
 Class: M,Wed, 9:30am - 10:30am, Chemistry-1171
 
 Sections:
-- Tue 5-5:50pm, Phelps 3526
-- ~~Tue 7-7:50pm, Phelps 3526~~
+- Tue 5-5:50pm, Phelps 3526 
+- ~~Tue 7-7:50pm, Phelps 3526~~ [https://www.youtube.com/watch?v=pXnUNXwcN_w&list=PLjN472_C9abru9P1SFMKJKRFe335R-Hlf](section recordings)
 
 Instructor's office hour: Mon, 3pm-4pm
 
