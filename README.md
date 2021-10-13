@@ -31,8 +31,8 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 9/29  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
 | 10/4  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf) [sec1](https://docs.google.com/presentation/d/1dn9KsnKd55hK6Nmzu2Y1w7sHjNQuuEo9mF4HHkJkhso/edit?usp=sharing)     |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
 | 10/6  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
-| 10/11  | Lexical Analysis                |  lec5  [sec2](./sections/sec02/)   |      |     |     |
-| 10/13 | Introduction to Parsing                           |  lec6     |      |   |     |
+| 10/11  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)  [sec2](./sections/sec02/)   |      |     |     |
+| 10/13 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
 | 10/18 | More about Parsing                            |  lec7      |      | AS2      |  AS1  |
 | 10/20 | Intermediate Representations                          |  lec8      |      |  |    |
 | 10/25 |    LLVMLite                      |  lec9      |     |     |   |
