@@ -33,8 +33,8 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 10/6  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
 | 10/11  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)  [sec2](./sections/sec02/)   |      |     |     |
 | 10/13 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
-| 10/18 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      | AS2      |  AS1  |
-| 10/20 | Introduction to parsing                          |  lec8      |      |  |    |
+| 10/18 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1  |
+| 10/20 | Introduction to parsing                          |  lec8      |      | [AS2](https://junrui-liu.github.io/patina/assignments/as2.html)  |    |
 | 10/25 |    More about parsing                      |  lec9      |     |     |   |
 | 10/27 |     Code Generation    | lec10        |      |   AS3 |  AS2  |
 | 11/1 |    Operational Semantics       | lec11        |      |    |  |
