@@ -35,8 +35,9 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 10/13 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
 | 10/18 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1  |
 | 10/20 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | [AS2](https://junrui-liu.github.io/patina/assignments/as2.html)  |    |
-| 10/25 |    More about parsing                      |  lec9      |     |     |   |
-| 10/27 |     Code Generation    | lec10        |      |   AS3 |  AS2  |
+| 10/25 | More about parsing | lec9 [sec4](sections/sec04)   |     |     |   |
+| 10/27 |     Code Generation    | lec10        |      |   AS3 |    |
+| 10/29 | - | | | | AS2 |
 | 11/1 |    Operational Semantics       | lec11        |      |    |  |
 | 11/3 | Type Checking I   |  lec12       |      |     |    |
 | 11/8 |  Type Checking II                     |  lec13       |      |  AS4   |  AS3   |

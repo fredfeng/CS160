@@ -1,0 +1,12 @@
+(env
+ (dev
+  (flags (:standard -warn-error -A))))
+
+(executable
+ (name stack)
+ (preprocess (pps ppx_deriving.show))
+ (modules stack ast scanner parser error)
+ (modes exe))
+
+(ocamllex scanner)
+(ocamlyacc parser)
