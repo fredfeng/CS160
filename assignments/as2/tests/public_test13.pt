@@ -1,0 +1,21 @@
+fn main()->int {
+	if isrighttriangle(3,4,5) then {
+		print(1);
+		print(2);
+		print(3)
+	} else {
+		print(0)
+	}
+}
+
+fn square(x:int)->int {
+	x*x
+}
+
+fn add(x:int, y:int) -> int{
+	x + y
+}
+
+fn isrighttriangle(a:int,b:int,c:int) -> bool {
+	add(square(a),square(b)) == square(c)
+}

@@ -1,0 +1,3 @@
+fn main(x:bool,y:bool,z:bool,q:[int],r:[int],a:int,b:int,c:int)->bool {
+	a < b && b <= c && y || a > b && b >= c && x || q[0] == q[1] && a==b
+}

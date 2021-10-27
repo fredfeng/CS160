@@ -1,0 +1,7 @@
+fn main(x:unit)->int {
+	5
+}
+
+fn notmain(f:bool) -> bool {
+	!f
+}

@@ -1,0 +1,12 @@
+fn main(x:[int],y:bool)->bool {
+	if x[1] + if y then {x[2]} else {x[3]} < 5 && true then {
+		let b : bool = true || false && true || false;
+		true && false || true && false
+	} else {
+		let c : bool = {
+			if y then {x[0]} else {5} < x[1] || y
+		};
+		let z: bool = x[0]>x[1];
+		!c || y && !z && z || !(c || y && !y || !z && !!!c)
+	}
+}
