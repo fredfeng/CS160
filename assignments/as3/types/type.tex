@@ -1,0 +1,354 @@
+\documentclass{article}
+\addtolength{\hoffset}{-2.25cm}
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathpartir}
+\usepackage{amsmath, amssymb}
+\usepackage{xspace}
+\newcommand{\toolname}{{\sc Patina}\xspace}
+\newcommand{\fenv}{{\Delta}\xspace}
+\newcommand{\tenv}{{\Gamma}\xspace}
+\newcommand{\booltype}{{\mathsf{Bool}}\xspace}
+\newcommand{\inttype}{{\mathsf{Int}}\xspace}
+\newcommand{\unittype}{{\mathsf{Unit}}\xspace}
+\newcommand{\arrtype}{{\mathsf{Arr}}\xspace}
+\newcommand{\type}{{\mathsf{T}}\xspace}
+\newcommand{\tval}[3]{#1 \vdash #2 \;:\; #3}
+\newcommand{\tfn}[2]{#1 \vdash_{\msf{fn}} #2}
+\newcommand{\tprog}[1]{\vdash_{\msf{prog}} #1}
+\newcommand{\tseq}[4]{#1 \vdash #2 \;:\; #3 \dashv #4}
+\newcommand{\hole}[0]{\,\square\,}
+
+
+% % \DeclareMathOperator{\elet}{\mathsf{let}}
+% % \DeclareMathOperator{\ein}{\mathsf{in}}
+% % \DeclareMathOperator{\ewhile}{\mathsf{in}}
+\newcommand{\msf}[1]{\mathop{\mathsf{#1}}}
+\newcommand{\elet}[3]{\msf{let}\, #1 : #2 = #3\xspace}
+\newcommand{\eif}[3]{\msf{if} \,#1\, \msf{then} \,#2\, \msf{else} \,#3\xspace}
+\newcommand{\ewhile}[2]{\msf{while} \, #1 \, #2}
+\newcommand{\efn}[4]{\msf{fn} #1 (#2) \to #3 \; #4}
+\newcommand{\envs}[0]{\fenv;\tenv}
+\title{Typing Rules for \toolname}
+\author{Peter Boyland, Junrui Liu}
+\date{\today}
+
+\newcommand{\truleTrue}{
+  \inferrule*[Right=T-True]{ }{\tval{\envs}{\msf{true}}{\booltype}}
+}
+\newcommand{\truleFalse}{
+  \inferrule*[Right=T-False]{ }{\tval{\envs}{\msf{false}}{\booltype}}
+}
+\newcommand{\truleInt}{
+  \inferrule*[Right=T-Int]{i \in \mathbb{Z}}{\tval{\envs}{i}{\inttype}}
+}
+\newcommand{\truleUnit}{
+  \inferrule*[Right=T-Unit]{ }{\tval{\envs}{\msf{()}}{\unittype}}
+}
+\newcommand{\truleNot}{
+  \inferrule*[Right=T-Not]{ \tval{\envs}{e}{\booltype}}{\tval{\envs}{!e}{\booltype}}
+}
+
+\newcommand{\truleArith}{
+  \inferrule*[Right=T-Arith]{
+    \tval{\envs}{e_1}{\inttype} \\
+    \tval{\envs}{e_2}{\inttype} \\
+    \hole \in \{ \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/} \,\}
+  } {
+    \tval{\envs}{e_1 \hole e_2}{\inttype}
+  }
+}
+
+\newcommand{\truleLogic}{
+  \inferrule*[Right=T-Logic]{
+    \tval{\envs}{e_1}{\booltype} \\
+    \tval{\envs}{e_2}{\booltype} \\
+    \hole \in \{\texttt{\&\&}, \texttt{||}\}
+  } {
+    \tval{\envs}{e_1 \hole e_2}{\booltype}
+  }
+}
+
+\newcommand{\truleCompare}{
+  \inferrule*[Right=T-Compare]{
+    \tval{\envs}{e_1}{\inttype} \\
+    \tval{\envs}{e_2}{\inttype} \\
+    \hole\; \in \{ \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=} \}
+  } {
+    \tval{\envs}{e_1 \hole e_2}{\booltype}
+  }
+}
+
+\newcommand{\truleEq}{
+  \inferrule*[Right=T-Eq]{
+    \tval{\envs}{e_1}{\type} \\
+    \tval{\envs}{e_2}{\type} \\
+    \hole\; \in \{ \texttt{==}, \texttt{!=} \}
+  } {
+    \tval{\envs}{e_1 \hole e_2}{\booltype}
+  }
+}
+
+\newcommand{\truleRead}{
+  \inferrule*[Right=T-Read]{
+    \tenv(x) = {\arrtype} \\
+    \tval{\envs}{e}{\inttype}
+  } {
+    \tval{\envs}{x[e]}{\inttype}
+  }
+}
+
+\newcommand{\truleWrite}{
+  \inferrule*[Right=T-Write]{
+    \tenv(x) = {\arrtype} \\
+    \tval{\envs}{e_1}{\inttype} \\
+    \tval{\envs}{e_2}{\inttype}
+  } {
+    \tval{\envs}{x[e_1] = e_2}{\unittype}
+  }
+}
+
+\newcommand{\truleAssign}{
+  \inferrule*[Right=T-Assign]{
+    \tenv(x) = \type \\
+    \tval{\envs}{e}{\type}
+  } {
+    \tval{\envs}{x = e}{\unittype}
+  }
+}
+
+\newcommand{\truleIf}{
+  \inferrule*[Right=T-If]{
+    \tval{\envs}{e_1}{\booltype} \\
+    \tval{\envs}{e_2}{\type} \\
+    \tval{\envs}{e_3}{\type}
+  } {
+    \tval{\envs}{\eif{e_1}{e_2}{e_3}}{\type}
+  }
+}
+
+\newcommand{\truleWhile}{
+  \inferrule*[Right=T-While]{
+    \tval{\envs}{e_1}{\booltype} \\
+    \tval{\envs}{e_2}{\unittype} \\
+  } {
+    \tval{\envs}{\ewhile{e_1}{e_2}}{\unittype}
+  }
+}
+
+\newcommand{\truleVar}{
+  \inferrule*[Right=T-Var]{
+    \tenv(x) = \type
+  } {
+    \tval{\envs}{x}{\type}
+  }
+}
+
+\newcommand{\truleLet}{
+  \inferrule*[Right=T-Let]{
+    \tseq{\envs}{e}{\type}{\envs'} \\
+  } {
+    \tseq{\envs}{\elet{x}{\type}{e}}{\unittype}{\envs[x \mapsto \type]}
+  }
+}
+
+
+\newcommand{\truleSeq}{
+  \inferrule*[Right=T-Seq]{
+    \tseq{\envs_0}{e_1}{\unittype}{\envs_1}\\
+    \tseq{\envs_1}{e_2}{\type}{\envs_2}\\
+  } {
+    \tseq{\envs_0}{ e_1; e_2 }{\type}{\envs_2}
+  }
+}
+
+\newcommand{\truleScope}{
+  \inferrule*[Right=T-Scope]{
+    \tseq{\envs}{e}{\type}{\envs'}
+  } {
+    \tseq{\envs}{ \{ e \} }{\type}{\envs}
+  }
+}
+
+\newcommand{\truleCall}{
+  \inferrule*[Right=T-Call]{
+    \fenv(f) = \type \to \type_r\\
+    \tval{\envs}{e}{\type}
+  } {
+    \tval{\envs}{f(e)}{\type_r}
+  }
+}
+
+\newcommand{\truleFn}{
+  \inferrule*[Right=T-Fn]{
+    \tval{\fenv;x : \type}{e}{T_r}
+  } {
+    \tfn{\fenv}{\efn{f}{x : \type}{\type_r}{e}}
+  }
+}
+
+\newcommand{\truleProg}{
+  \inferrule*[Right=T-Prog]{
+    \msf{fn_1} = \efn{f_1}{x : \type_1}{\type_{r_1}}{e_1}\\
+    \cdots\\
+    \msf{fn_n} = \efn{f_n}{x : \type_n}{\type_{r_n}}{e_n}\\\\
+    \tfn{\fenv}{\efn{f_1}{x : \type_1}{\type_{r_1}}{e_1}}\\
+    \cdots\\
+    \tfn{\fenv}{\efn{f_n}{x : \type_n}{\type_{r_n}}{e_n}}\\\\
+    \fenv = f_1 : \type_1 \to \type_{r_1}; \ldots; f_n : \type_n \to \type_{r_n}\\
+  } {
+    \tprog{\msf{fn_1} \; \ldots \; \msf{fn_n}}
+  }
+}
+
+
+
+
+
+\begin{document}
+\maketitle
+
+Notation:
+\begin{itemize}
+  \item
+  $\tenv$ is the {\it type environment} that maps variables to their types.
+  \item
+  $\fenv$ stores the types of all global functions. It maps names of the functions to their argument and return types.
+  \item
+  Judgments of the form ``\,$\tseq{\fenv;\tenv}{e}{\type}{\fenv';\tenv'}\,$'' are {\it expression typing judgments}. It asserts that, under the environment pair $\fenv;\tenv$, expression $e$ has type $\type$, and produces a new environment pair $\fenv';\tenv'$. Note that in \toolname, $\fenv$ is not modified under expression typing, so it is always the case that $\fenv = \fenv'$.
+  \begin{itemize}
+    \item When the environment $\tenv$ is also not modified, we use the abbreviation $$\tval{\envs}{e}{\type}$$ in place of $$\tseq{\envs}{e}{\type}{\envs}.$$
+  \end{itemize}
+  \item 
+  Judgments of the form ``$\,\tfn{\fenv}{\efn{f}{x: \type}{\type_r}{e}}\,$'' are {\it function typing judgments}. It asserts that the function $f$, which takes in an argument $x$ of type $\type$ and has body expression $e$, returns $\type_r$ under the global function environment $\fenv$.  We only present the typing rules for single-argument functions, but they could be easily extended to account for multi-argument functions.
+  \item
+  Judgments of the form ``$\,\tprog{\msf{fn_1}, \ldots, \msf{fn_n}}\,$'' are {\it program typing judgments}. It asserts that every function in the program is well-typed.
+\end{itemize}
+
+\section{Expression Typing Rules (Basic)}
+
+The unit value has type $\unittype$:
+$$\truleUnit$$
+
+Boolean constants have type $\booltype$:
+$$\truleTrue$$
+$$\truleFalse$$
+
+Integer constants have type $\inttype$:
+$$\truleInt$$
+
+The negation of a boolean expression has type $\booltype$:
+$$\truleNot$$
+
+Binary arithmetic expressions have type $\inttype$:
+$$\truleArith$$
+
+Binary logical expressions have type $\booltype$:
+$$\truleLogic$$
+
+Integer comparisons have type $\booltype$:
+$$\truleCompare$$
+
+Two expressions of the same type can be checked for (in-)equality:
+$$\truleEq$$
+
+An $\msf{if}$ expression has type $\type$, if the condition is a boolean expression and the two branches both have type $\type$:
+$$\truleIf$$
+
+A $\msf{while}$ expression has type $\unittype$, if the condition is a boolean expression and the body is a unit expression.
+$$\truleWhile$$
+
+
+\section{Expression Typing Rules (Advanced)}
+An variable $x$ has type $\type$ under the type environment $\tenv$, if looking up $x$ in $\tenv$ yields $\type$:
+$$\truleVar$$
+
+A let-expression assigns an expression $e$ of type $\type$ to the variable $x$. The let-expression itself has type $\unittype$, and it augments the type environment by mapping $x$ to $\type$:
+$$\truleLet$$
+
+To type-check the sequence $e_1;e_2$, we check that the first expression has type $\unittype$ and the second expression has some type $\type$. The type of the overall sequence is $\type$.
+$$\truleSeq$$
+Note that this rule can be used to type-check arbitrarily long sequences. For example, to type check $e_1;e_2;e_3$ (which should be read as ``$e_1;(e_2;e_3)$''), we first check $e_1$, and then $(e_2;e_3)$.
+
+Remember that a sequence also delineates a scope. To type-check the scope, we check the expressions inside it, but in the end we restore the original environment.
+$$\truleScope$$
+
+If an variable $x$ has type $\type$ in the current scope, then we can assign an expression of the same type to $x$; the assignment itself has type $\unittype$:
+$$\truleAssign$$
+
+An integer array can be indexed with an integer index:
+$$\truleRead$$
+
+An element of an integer array can be overwritten with a new value:
+$$\truleWrite$$
+
+The result of calling a function of type $\type \to \type_r$ with an argument of type $\type$ has type $\type_r$:
+$$\truleCall$$
+
+\section{Function and Program Typing Rules}
+To type-check a function definition against $\fenv$ (containing types of all global function), we type-check the body of the function, where the initial type environment is just the parameters mapped to their declared types:
+$$\truleFn$$
+
+To type-check a program, which is a list of function definitions, we populate $\fenv$ with types of all global functions\footnote{This enables us to type-check recursive functions.}, and then type-check each function against $\fenv$:
+$$\truleProg$$
+% \,
+% \inferrule[T-False]{ }{\Gamma \vdash false : bool}
+% \,
+% \inferrule[T-Int]{ n \geq 0 }{\Gamma \vdash n : int}
+% \,
+% \inferrule[T-Unit]{ }{\Gamma \vdash () : unit}
+% \,
+% \inferrule[T-Not]{\Gamma \vdash e1 : bool}{\Gamma \vdash !e1 : bool}
+% \,
+% \inferrule[T-Neg]{\Gamma \vdash e1 : int}{\Gamma \vdash - e1 : int}
+% \,
+% \inferrule[T-Arith]{\Gamma \vdash e1 : int \\ \Gamma \vdash e2 : int \\ \oplus \in \{+,-,*,/\}}{\Gamma \vdash e1 \, \oplus \, e2 : int}
+% \,
+% \inferrule[T-Compare]{\Gamma \vdash e1 : int \\ \Gamma \vdash e2 : int \\ \simeq \in \{<,>,<=,>=,=,!=\}}{\Gamma \vdash e1 \simeq e2 : bool}
+% \,
+% \inferrule[T-Logic]{\Gamma \vdash e1 : bool \\ \Gamma \vdash e2 : bool \\ \otimes \in \{||,\&\&\}}{\Gamma \vdash e1 \otimes e2 : bool}
+% \,
+% \inferrule[T-ArrIdx]{\Gamma \vdash e1 : [int] \\ \Gamma \vdash e2 : int}{\Gamma \vdash e1[e2]: int}
+% \,
+% \inferrule[T-Par]{\Gamma \vdash e1 : t}{\Gamma \vdash (e1) : t}
+% \,
+% \inferrule[T-If]{\Gamma \vdash e1 : bool \\ \Gamma \vdash e2 : t \\ \Gamma \vdash e3 : t}{\Gamma \text{if } e1 \text{ then } e2 \text{ else } e2: t}
+% \,
+% \inferrule[T-While]{\Gamma \vdash e1 : bool \\ \Gamma \vdash e2 : unit}{\Gamma \text{while(e1) e2} : unit}
+% \,
+% \inferrule[T-Assign]{\Gamma \vdash e1 : t \\ \Gamma \vdash e2 : t}{\Gamma \vdash e1 = e2 : unit}
+% \,
+% \inferrule[T-AssignArr]{\Gamma \vdash e1 : [int] \\ \Gamma \vdash e2 : int \\ \Gamma \vdash e3 : int}{\Gamma \vdash e1[e2]=e3 : unit}
+% $
+% \end{mathpar}
+% \section{More Complicated Rules}
+% \begin{mathpar}
+% $
+% \inferrule[T-Block]{\Gamma \vdash e1 : t}{\Gamma \vdash \{e1\} : t}
+% \,
+% \inferrule[T-Id]{\Gamma(id) = t}{\Gamma \vdash id : t}
+% \,
+% \inferrule[T-Decl]{\Gamma \vdash e1 : t \\ \Gamma, (id,t) \vdash e2 : t2}{\Gamma \vdash \text{let id} : t = e1; e2 : t2}
+% \,
+% \inferrule[T-Seq]{\Gamma \vdash e1 : t1 \\ \Gamma \vdash e2 : e2 \\ e1 \text{ not let}}{\Gamma \vdash e1; e2 : t2}
+% \,
+% \inferrule[T-Args]{\Gamma \vdash e : t \\ \Gamma \vdash es : ts}{\Gamma \vdash e, es : t, ts}
+% \,
+% \inferrule[T-App]{P \text{ program} \\ P \vdash f : ts \to t \\ \Gamma \vdash es : ts}{\Gamma \vdash f(es) : t}
+% \,
+% \inferrule[F-Decl]{\text{ts types ps}}{\text{fn id ps} \to \text{t e1} \vdash id : ts \to t}
+% \,
+% \inferrule[F-L]{p \vdash f : ts \to t}{p\text{ f1} \vdash f : ts \to t}
+% \,
+% \inferrule[F-R]{p \vdash f : ts \to t}{\text{f1 }p \vdash f : ts \to t}
+% \,
+% \inferrule[F-FType]{\text{params} \vdash e1 : t}{\text{typed}(\text{fn id (params)} \to \text{t e1})}
+% \,
+% \inferrule[F-Prog]{\text{typed(p1)} \\ \text{typed(p2)}}{\text{typed(p1 p2)}}
+
+\end{document}
