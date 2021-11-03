@@ -38,12 +38,12 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 10/25 | More about parsing | [lec9](lectures/lecture9.pdf) [sec4](sections/sec04)   |     |     |   |
 | 10/27 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
 | 10/29 | - | | | | AS2 |
-| 11/1 |    Operational Semantics       | lec11        |      |    |  |
-| 11/3 | Type Checking I   |  lec12       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
+| 11/1 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
+| 11/3 | Type Checking I   |  [lec12](lectures/lecture12.pdf)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
 | 11/8 |  Type Checking II                     |  lec13       |      |  AS4?   |  AS3?   |
-| 11/10  |  Optimization   | lec14 |      | |     |
+| 11/10  |  Code Generation   | lec14 |      | |     |
 | 11/15  | Midterm (take-home)|        |      |     |     |
-| 11/17  | Garbage Collection |        |      |  AS5?   |  AS4?   |
+| 11/17  | Optimization |        |      |  AS5?   |  AS4?   |
 | 11/22 | Data Flow Analysis                       |         |       |     |     |
 | 11/24 | Control Flow Analysis                |        |      |     | |
 | 11/29 | Course Review        |         |      |     |    |
