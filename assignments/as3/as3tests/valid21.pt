@@ -1,0 +1,15 @@
+fn notmain() -> int {
+	89
+}
+
+fn main() -> unit {
+	let x : int = 4;
+	let t : int = 3;
+	let v : int = {
+		let t : bool = true;
+		let notmain : unit = ();
+		if t then {x = x + 1} else {x = x - 1};
+		x
+	};
+	if (t==notmain()) then {print_int(t)} else {print_int(x)}
+}

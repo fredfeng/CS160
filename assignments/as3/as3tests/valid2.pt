@@ -1,0 +1,4 @@
+fn main() -> unit {
+	let x : int = 7;
+	()
+}

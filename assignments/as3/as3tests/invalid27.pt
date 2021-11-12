@@ -1,0 +1,13 @@
+fn notmain() -> int {
+	89
+}
+
+fn main() -> unit {
+	let t : int = 3;
+	if (t==notmain()) then {print_int(t)} else {print_int(x)}
+}
+
+
+fn notmain() -> int {
+	43
+}

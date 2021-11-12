@@ -1,0 +1,7 @@
+fn print_ln() -> unit {
+	()
+}
+
+fn main() -> unit {
+	print_ln()
+}

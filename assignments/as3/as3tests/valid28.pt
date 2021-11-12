@@ -1,0 +1,10 @@
+fn main() -> unit {
+	let t : int = 3;
+	if (t==notmain(notmain(2,3,2==3),2,false)) then {print_int(t)} else {print_int(90)};
+	t = 99
+}
+
+fn notmain(x:int,f:int,d:bool) -> int {
+	print_ln();
+	32
+}

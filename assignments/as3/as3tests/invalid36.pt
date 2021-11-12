@@ -1,0 +1,7 @@
+fn alloc(f:int) -> [int] {
+	alloc(f)
+}
+
+fn main() -> unit {
+	()
+}

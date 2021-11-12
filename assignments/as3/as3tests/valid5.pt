@@ -1,0 +1,6 @@
+fn main() -> unit {
+	let x : bool = true;
+	let y : bool = x || false;
+	let z : bool = (x != y) && (y == false || !y);
+	()
+}

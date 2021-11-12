@@ -1,0 +1,13 @@
+fn main() -> unit {
+	let b : bool = 5!=3;
+	let c : bool = (b==false);
+	let x : int = 3;
+	let z : int = 0;
+	let u : unit = while (x > 0){
+		x = x - 1;
+		let x : int = x - 1;
+		z = z + x;
+		z
+	};
+	print_int(z)
+}

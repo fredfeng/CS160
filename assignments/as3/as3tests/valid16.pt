@@ -1,0 +1,7 @@
+fn main() -> unit {
+	let x : int = 45;
+	x = 23;
+	let t : unit = print_int(x);
+	let x : unit = ();
+	x
+}

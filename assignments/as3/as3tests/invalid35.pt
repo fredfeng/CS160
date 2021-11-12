@@ -1,0 +1,12 @@
+fn main(x:int,f:int) -> int {
+	let f : bool = {
+		let x : bool = true;
+		x || (f == 23)
+	};
+	if f then {x} else {x+2}
+}
+
+fn main() -> unit {
+	let t : int = 3;
+	if (t==main(main(2,3),9)) then {print_int(t)} else {print_int(90)}
+}

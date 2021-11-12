@@ -1,0 +1,5 @@
+fn main() -> unit {
+	let x : int = 4;
+	let y : int = x + 8 - x * 2 / 10;
+	if x < y then {()} else {()}
+}
