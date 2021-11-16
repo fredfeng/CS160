@@ -42,7 +42,7 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 11/3 | Type Checking I   |  [lec12](lectures/lecture12.pdf)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
 | 11/8 |  Type Checking II                     |  lec13       |      |     |    |
 | 11/10  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
-| 11/15  | Midterm (take-home)|        |      |  AS4   |  AS3   |
+| 11/15  | Midterm (take-home)|        |      |  [AS4](assignments/as4.pdf)   |  AS3   |
 | 11/17  | Code Generation II |        |      |     |    |
 | 11/22 | Optimization I                       |         |       |     |     |
 | 11/24 | Optimization II                |        |     |  AS5    |  AS4 |
