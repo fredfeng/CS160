@@ -5,7 +5,7 @@ fn main() -> unit {
 }
 
 fn notmain(x:int,f:int,d:bool) -> int {
-	print_ln();
+	print_ln(f);
 	let r : [int] = alloc(45);
 	32
 }
