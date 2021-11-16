@@ -39,10 +39,10 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 10/27 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
 | 10/29 | - | | | | AS2 |
 | 11/1 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
-| 11/3 | Type Checking I   |  [lec12](lectures/lecture12.pdf)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
+| 11/3 | Type Checking I   |  [lec12](lectures/lecture12.pdf) [sec6](https://www.youtube.com/watch?v=PE_VnqhYm5I)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
 | 11/8 |  Type Checking II                     |  lec13       |      |     |    |
 | 11/10  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
-| 11/15  | Midterm (take-home)|        |      |  [AS4](assignments/as4.pdf)   |  AS3   |
+| 11/15  | Midterm (take-home)|        |      |  [AS4](https://junrui-liu.github.io/patina/assignments/as4.html)   |  AS3   |
 | 11/17  | Code Generation II |        |      |     |    |
 | 11/22 | Optimization I                       |         |       |     |     |
 | 11/24 | Optimization II                |        |     |  AS5    |  AS4 |
