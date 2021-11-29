@@ -1,0 +1,13 @@
+{
+	let x : int = 0;
+	let break : bool = false;
+	while !break {
+		let y : int = 0;
+		while (!break && y < x){
+			if y*y == x && x > 10 then {break = true} else {break = false};
+			y = y + 1
+		};
+		x = x+1
+	};
+	x-1
+}
