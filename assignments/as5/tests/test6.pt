@@ -1,0 +1,9 @@
+{
+	let x : bool = true;
+	let y : bool = false;
+	if x then {
+		()
+	} else {
+		()
+	}
+}

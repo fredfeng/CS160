@@ -1,0 +1,5 @@
+{
+  let x: int = 2;
+  let y: int = x + 1;
+  x - y
+}

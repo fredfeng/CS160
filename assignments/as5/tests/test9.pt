@@ -1,0 +1,5 @@
+{
+  let y : unit = ();
+  let z : unit = ();
+  y != z
+}

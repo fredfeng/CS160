@@ -1,0 +1,11 @@
+{
+  let x: int = 2;
+  let y: int = x + 1;
+  let z: int = y * x;
+  {
+    let x: int = x + 1;
+    let y: int = y - 2;
+    let z: int = z / 3;
+    x + y + z
+  }
+}
