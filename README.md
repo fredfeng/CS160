@@ -47,7 +47,8 @@ Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3
 | 11/22 | Optimization I                       |   [lec15](lectures/lecture15.pdf) [sec8](sections/sec08)      |       |     |     |
 | 11/24 | Optimization II                |        |     |      |   |
 | 11/29 | Optimization III        |         |      |  [AS5](https://junrui-liu.github.io/patina/assignments/as5.html)   | AS4   |
-| 12/1  | Final week, no class                                 |        |      |     |  AS5?  |
+| 12/1  | Final week, no class                                 |        |      |     |    |
+| 12/10 | - | | | | AS5 |
 
 
 # Grading
