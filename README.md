@@ -15,7 +15,7 @@ Class: M,Wed, 2:00pm - 3:00pm, HSSB-1174
 Sections:
 - Tue TBD, Phelps 3526 
 
-Instructor's office hour: Mon, 3pm-4pm, HFH 2157
+Instructor's office hour: Wed, 3pm-4pm, HFH 2157
 
 TA's office hour:
 - Jingtao Xia: TBD, Phelps 3523 
