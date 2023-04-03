@@ -27,28 +27,28 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 
 | Date  | Topic                                         | Slides | Read | Out | Due |
 |-------|-----------------------------------------------|--------|------|-----|-----|
-| 9/27  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
-| 9/29  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 10/4  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf) [sec1](https://docs.google.com/presentation/d/1dn9KsnKd55hK6Nmzu2Y1w7sHjNQuuEo9mF4HHkJkhso/edit?usp=sharing)     |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
-| 10/6  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
-| 10/11  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)  [sec2](./sections/sec02/)   |      |     |     |
-| 10/13 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
-| 10/18 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1  |
-| 10/20 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | [AS2](https://junrui-liu.github.io/patina/assignments/as2.html)  |    |
-| 10/25 | More about parsing | [lec9](lectures/lecture9.pdf) [sec4](sections/sec04)   |     |     |   |
-| 10/27 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
-| 10/29 | - | | | | AS2 |
-| 11/1 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
-| 11/3 | Type Checking I   |  [lec12](lectures/lecture12.pdf) [sec6](https://www.youtube.com/watch?v=PE_VnqhYm5I)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
-| 11/8 |  Type Checking II                     |  lec13       |      |     |    |
-| 11/10  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
-| 11/15  | Midterm (take-home)|        |      |  [AS4](https://junrui-liu.github.io/patina/assignments/as4.html)   |  AS3   |
-| 11/17  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |     |    |
-| 11/22 | Optimization I                       |   [lec15](lectures/lecture15.pdf) [sec8](sections/sec08)      |       |     |     |
-| 11/24 | Optimization II                |        |     |      |   |
-| 11/29 | Optimization III        |         |      |  [AS5](https://junrui-liu.github.io/patina/assignments/as5.html)   | AS4   |
-| 12/1  | Final week, no class                                 |        |      |     |    |
-| 12/10 | - | | | | AS5 |
+| 4/3  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
+| 4/5  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
+| 4/10  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf) [sec1](https://docs.google.com/presentation/d/1dn9KsnKd55hK6Nmzu2Y1w7sHjNQuuEo9mF4HHkJkhso/edit?usp=sharing)     |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
+| 4/12  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
+| 4/17  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)  [sec2](./sections/sec02/)   |      |     |     |
+| 4/19 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
+| 4/24 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1  |
+| 4/26 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | [AS2](https://junrui-liu.github.io/patina/assignments/as2.html)  |    |
+| 5/1 | More about parsing | [lec9](lectures/lecture9.pdf) [sec4](sections/sec04)   |     |     |   |
+| 5/3 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
+| 5/8 | - | | | | AS2 |
+| 5/10 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
+| 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf) [sec6](https://www.youtube.com/watch?v=PE_VnqhYm5I)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
+| 5/17 |  Type Checking II                     |  lec13       |      |     |    |
+| 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
+| 5/24  | Midterm (take-home)|        |      |  [AS4](https://junrui-liu.github.io/patina/assignments/as4.html)   |  AS3   |
+| 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |     |    |
+| 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf) [sec8](sections/sec08)      |       |     |     |
+| 6/5 | Optimization II                |        |     |      |   |
+| 6/7 | Optimization III        |         |      |  [AS5](https://junrui-liu.github.io/patina/assignments/as5.html)   | AS4   |
+| TBD  | Final week, no class                                 |        |      |     |    |
+| 6/12 | - | | | | AS5 |
 
 
 # Grading
