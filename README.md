@@ -20,7 +20,7 @@ Instructor's office hour: Wed, 3pm-4pm, HFH 2157
 TA's office hour:
 - Jingtao Xia: Tues 1:30pm - 2:30pm (Phelps 3523)
 - Junrui Liu: Wed 3-4PM (Phelps 3523)
-- Thanawat Techaumnuaiwit: Fri 1-2pm (place TBD)
+- Thanawat Techaumnuaiwit: Fri 1-2pm (**CSIL**)
 
 Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CANHgzKNCgAWr3a4Sg
 
