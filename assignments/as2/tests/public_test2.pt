@@ -1,6 +1,0 @@
-fn main(x:int,y:
-bool, z:
-[int])
--> unit {
-let f : bool =
-true; () }

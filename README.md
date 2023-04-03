@@ -18,9 +18,9 @@ Sections:
 Instructor's office hour: Wed, 3pm-4pm, HFH 2157
 
 TA's office hour:
-- Jingtao Xia: TBD, Phelps 3523 
-- Junrui Liu: TBD, Phelps 3523
-- Thanawat Techaumnuaiwit: TBD
+- Jingtao Xia: Tues 1:30pm - 2:30pm (Phelps 3523)
+- Junrui Liu: Wed 3-4PM (Phelps 3523)
+- Thanawat Techaumnuaiwit: Fri 1-2pm (place TBD)
 
 Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CANHgzKNCgAWr3a4Sg
 
@@ -29,26 +29,26 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 |-------|-----------------------------------------------|--------|------|-----|-----|
 | 4/3  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
 | 4/5  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 4/10  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf) [sec1](https://docs.google.com/presentation/d/1dn9KsnKd55hK6Nmzu2Y1w7sHjNQuuEo9mF4HHkJkhso/edit?usp=sharing)     |     |  [AS1](https://junrui-liu.github.io/patina/assignments/as1.html)   |    |
+| 4/10  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf)      |     |  AS1 (tentative)   |    |
 | 4/12  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
-| 4/17  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)  [sec2](./sections/sec02/)   |      |     |     |
+| 4/17  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)     |      |     |     |
 | 4/19 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
-| 4/24 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1  |
-| 4/26 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | [AS2](https://junrui-liu.github.io/patina/assignments/as2.html)  |    |
-| 5/1 | More about parsing | [lec9](lectures/lecture9.pdf) [sec4](sections/sec04)   |     |     |   |
+| 4/24 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  AS1 (tentative)  |
+| 4/26 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | AS2 (tentative)  |    |
+| 5/1 | More about parsing | [lec9](lectures/lecture9.pdf)    |     |     |   |
 | 5/3 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
-| 5/8 | - | | | | AS2 |
+| 5/8 | - | | | | AS2 (tentative) |
 | 5/10 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
-| 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf) [sec6](https://www.youtube.com/watch?v=PE_VnqhYm5I)       |      |  [AS3](https://junrui-liu.github.io/patina/assignments/as3.html)   |    |
+| 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  AS3 (tentative)   |    |
 | 5/17 |  Type Checking II                     |  lec13       |      |     |    |
 | 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
-| 5/24  | Midterm (take-home)|        |      |  [AS4](https://junrui-liu.github.io/patina/assignments/as4.html)   |  AS3   |
+| 5/24  | Midterm (take-home)|        |      |  AS4 (tentative)   |  AS3 (tentative)   |
 | 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |     |    |
-| 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf) [sec8](sections/sec08)      |       |     |     |
+| 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf)       |       |     |     |
 | 6/5 | Optimization II                |        |     |      |   |
-| 6/7 | Optimization III        |         |      |  [AS5](https://junrui-liu.github.io/patina/assignments/as5.html)   | AS4   |
+| 6/7 | Optimization III        |         |      |  AS5 (tentative)   | AS4 (tentative)   |
 | TBD  | Final week, no class                                 |        |      |     |    |
-| 6/12 | - | | | | AS5 |
+| 6/12 | - | | | | AS5 (tentative) |
 
 
 # Grading

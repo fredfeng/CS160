@@ -1,3 +1,0 @@
-fn main(x:[int])->int {
-	x[0][0]
-}

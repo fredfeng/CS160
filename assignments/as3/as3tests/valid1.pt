@@ -1,4 +1,0 @@
-fn main() -> unit {
-	let f : unit = ();
-	()
-}

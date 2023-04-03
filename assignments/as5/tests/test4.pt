@@ -1,6 +1,0 @@
-{
-  let x: int = 2;
-  let y: int = x + 1;
-  let z: int = y * x;
-  y + z / (x+1)
-}

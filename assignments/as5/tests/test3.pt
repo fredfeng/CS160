@@ -1,9 +1,0 @@
-{
-  let b: bool = !true;
-  if b then {
-    let c : bool = if !b then { b && !b } else { b || b };
-    !c
-  } else {
-    !(!(b || !(!b && b)))
-  }
-}
