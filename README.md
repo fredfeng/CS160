@@ -3,26 +3,26 @@
 The goal of this course is to give an introduction to compiler, a computer program that translate source code from a high-level programming language to a lower level language to create an executable program.
 Through this course, you will learn to build a compiler from scratch.
 
-The workloads include 5 programming assignments and a take-home midterm exam.
+The workloads include 5 programming assignments.
 
 # Office hour
 Instructor : Yu Feng (yufeng@UCSBCS)
 
-TA : Junrui Liu (junrui@ucsb) Peter Boyland (boyland@umail.ucsb.edu)
+TA : Junrui Liu (junrui@ucsb) Jingtao Xia (jingtaoxia@ucsb.edu)
 
-Class: M,Wed, 9:30am - 10:30am, Chemistry-1171
+Class: M,Wed, 2:00pm - 3:00pm, HSSB-1174
 
 Sections:
-- Tue 5-5:50pm, Phelps 3526 
-- ~~Tue 7-7:50pm, Phelps 3526~~ [section recordings](https://www.youtube.com/watch?v=pXnUNXwcN_w&list=PLjN472_C9abru9P1SFMKJKRFe335R-Hlf)
+- Tue TBD, Phelps 3526 
 
-Instructor's office hour: Mon, 3pm-4pm, Phelps 3523
+Instructor's office hour: Mon, 3pm-4pm, HFH 2157
 
 TA's office hour:
-- Peter Boyland: Mon 5:30-6:30 PM, Sat 10-11 AM - [link](https://ucsb.zoom.us/j/4548352156?pwd=Wkc1VXVOY3ROaEJZYlpXcUVRQkhIdz09)
-- Junrui Liu: Thur 10am-11am, Phelps 3523
+- Jingtao Xia: TBD, Phelps 3523 
+- Junrui Liu: TBD, Phelps 3523
+- Thanawat Techaumnuaiwit: TBD
 
-Slack: https://join.slack.com/t/cs160-fall21/shared_invite/zt-v4se5qat-bo1o9qAz3LowXdLf5sSyMQ
+Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CANHgzKNCgAWr3a4Sg
 
 
 | Date  | Topic                                         | Slides | Read | Out | Due |
