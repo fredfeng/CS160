@@ -6,20 +6,22 @@ Through this course, you will learn to build a compiler from scratch.
 The workloads include 5 programming assignments.
 
 # Office hour
-Instructor : Yu Feng (yufeng@UCSBCS)
+Instructor: Yu Feng (yufeng@UCSBCS)
 
-TA : Junrui Liu (junrui@ucsb) Jingtao Xia (jingtaoxia@ucsb.edu)
+TA: Junrui Liu (junrui@ucsb), Jingtao Xia (jingtaoxia@ucsb.edu), Thanawat Techaumnuaiwit (thanawat@uscb.edu)
 
-Class: M,Wed, 2:00pm - 3:00pm, HSSB-1174
+Class: Mon & Wed, 2-3pm, HSSB 1174
 
 Sections:
-- Tue TBD, Phelps 3526 
+- Thur 3-4pm (ILP 4209) 
+- 4-5pm (ILP 4209) 
+- 5-6pm (ILP 2207)
 
-Instructor's office hour: Wed, 3pm-4pm, HFH 2157
+Instructor's office hour: Wed, 3-4pm, HFH 2157
 
 TA's office hour:
-- Jingtao Xia: Tues 1:30pm - 2:30pm (Phelps 3523)
-- Junrui Liu: Wed 3-4PM (Phelps 3523)
+- Jingtao Xia: Tue 1:30-2:30pm (Phelps 3523)
+- Junrui Liu: Thur 11am-12pm (Phelps 3523)
 - Thanawat Techaumnuaiwit: Fri 1-2pm (**CSIL**)
 
 Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CANHgzKNCgAWr3a4Sg
