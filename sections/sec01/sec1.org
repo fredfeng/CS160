@@ -1,0 +1,125 @@
+#+title: Section
+#+STARTUP: inlineimages
+* Who am I?
++ My name is Thanawat.  I'm a new BS/MS student and a new TA.
++ Some of you might've known me from your courses in undergrad.
++ This is my first ever section, so be nice please..
++ Office hours are Friday - 1pm-2pm in CSIL
++ DM me in slack or email ( thanawat@uscb.edu ) if you have questions
+  on assignments *that are specific to your code*. Direct general
+  questions to the general channel on slack.
+* Installing Ocaml
++ see: https://github.com/fredfeng/CS162/tree/master/sections/sec01
+**  Windows
++ Windows support for ocaml sucks. There's [[https://github.com/diskuv/dkml-installer-ocaml#readme][dkml]], but  that's 30GB min and an hour of compilation time.. So just use CSIL instead.
+***  CSIL instructions
+Should be copy paste. *Don't copy paste commands without understanding it*. The explanation for each command is:  
+1. Download the =opam= binary. =opam= is a  *package manager* (program that installs "packages" - libraries / other programs - for ocaml).
+2. Add =~/.local/bin= to your =PATH=
+3. Refresh the bash shell after changing =.bashrc=.
+4. Add the "execute" permission flag to the =opam= binary you downloaded
+5. Move the opam binary to =~/.local/bin=
+6. Install ocaml for real. When you do =opam init=, it might take a
+   while and there's a prompt about adding stuff to =.bash_profile= at
+   the end. If you miss the prompt, you can just do =opam init= again or
+   add the stuff manually.
+#+begin_src sh
+  curl -LR 'https://github.com/ocaml/opam/releases/download/2.1.4/opam-2.1.4-x86_64-linux' -o opam
+  echo "PATH=$PATH:~/.local/bin" >> .bashrc
+  source ~/.bashrc
+  chmod +x opam
+  mv opam ~/.local/bin # if .local/bin doesn't exist, create it
+  opam init
+#+end_src
+**  MacOS + use homebrew
+#+begin_src sh
+  # if you don't already have homebrew
+  /bin/bash +c "$(curl +fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew install opam
+#+end_src
+**  Linux + use your  package manager (apt, etc)
++ reason why we can't use the package manager on CSIL is that we don't have root permissions.
+* Ocaml for newbies
+**  The ML "workflow"
++ The programming language (or language in general) and the *tooling of that language* aligns the way you think about and write your program
++ The formula for solving problems in ML languages is:
+  1. Come up with or understand the "data" you are working with + ADTs.
+  2. Write out the type signatures
+  3. Let the types guide your solution - this means using the *compiler* to help you
++ *Use the interpreter as much as possible* - in general, you should run your code as often as possible in /any/ language, but Ocaml is nice b/c it has an interpreter.
+  + The interpreter allows a quick /feedback loop/ - so you know immediately if you made a small mistake.
+**  Common Newbie mistakes
+***  Immutability
++ Rather than in *imperative* programming + like java or C++, where you
+  are conditioned to think about algorithms as a sequence of steps,
+  functional programming emphasizes *composition*.
++ Values are *immutable* in functional programming! That means they
+  *don't change*. You solve problems in FP by *composition* + that means
+  chaining functions together. Here's a nice diagram:
+
+[[file:ltximg/org-ltximg_08a2acbeecf977f8f0ce4b45567896b874423009.png]]  
+***  Everything is an expression
++ I don't know enough Ocaml to say /everything/ is an expression in ocaml, but most things should be expression.
++ Expressions are, roughly, things that /evaluate to a value/. They can be used in a lot of places!
++ Things that are /statements/ in Python are:
+  #+begin_src python
+  a = 5 # Not an expression either
+  # This is NOT an expression
+  if True: 
+      print("true")
+  
+  #+end_src
++ In Ocaml, you can do things like:
+  #+begin_src ocaml
+ if (let x = true in x) then true else false;; (* I can do a "let .. in" in an "if" statement for example *)
+ (* or *)
+ let x = if true then 5 else 6;; (* bind x like that. *)
+  #+end_src
+***  Types / Terms
++ Another confusing thing for beginners learning an ML family language
+  is distinguishing types and terms, and "solving" type signatures.
+  There's 2 "worlds" - the world of types, and the world of terms -
+  this is more blurred with /dependent types/ but this class won't cover
+  that.
++ Eventually, you will learn to figure out type signature of things in your head, but especially
+  when you are learning, use the interpreter to help you!
++ Example type signature:
+  #+begin_src ocaml
+  let id : 'a +> 'a = fun x -> x;;
+  let y = id 3;; (* The type of "y" is inferred.. but what is the type of y and how do we get that? *)
+  #+end_src
++ Application steps for =id 3=
+  1. x is *bound* to 3 
+  2. substitute all instances of "x" with "3" - so the "return" of =id 3= is 3.
++ Steps (draw it):
+  + The type of =3= is =int=
+  + When you apply =3=  to =id=, you substitute the type variable ='a= with =int= (because ='a= is the type var for the argument).
+  + Now, in the *body* of the type signature, ='a= becomes =int=.
+* Using the interpreter / compiler to help you
++ *Coding in an ML family language  is about having a conversation with the compiler*.
++ You can imagine the compiler as like a *sound* ChatGPT + that means
+  that you can get answers to certain questions+ and they are
+  guaranteed to be correct, but you can't answer every question you
+  have about your code.
+  + ChatGPT can give you an answer, but  it can  give you a "wrong" answer - but it can answer a large space of questions.
+  + The compiler will *always* give you a "right" answer - but the amount of questions it can answer is limited.
+* Recursion Review - I'll cover this in the demo
+**   My Steps to recursion
+1. Name the  function
+2. Type the function - write the types for the arguments and the return value
+3. If your input is a recursive data structure - pattern match on it (oftentimes, it is)
+4. Figure out what variables are "in play" - the function  itself are included in this
+5. Play around with these variables and see what type checks
+6. Test out your solution in the interpreter - just because it type checks, doesn't mean it's correct
+**   Recursion Resources / citation for my steps
++ https://www.youtube.com/watch?v=n6bg8L91Qew + How to think recursively by Graham Hutton. Here he outlines 7 steps:
++ https://github.com/fredfeng/CS162/blob/master/sections/sec01/sec01.pdf + Junrui (head TA's) notes.
+* Demo
++ Things I want to show (more for me, so I don't forget):
+  1. The recursion process
+  2. How to use the repl for type signatures / tracing
+  3. How functions can be composed to solve problems
++ If you haven't got ocaml installed, use: https://try.ocamlpro.com/ to run examples. The interpreter is on the left.
+* Further Ocaml resources
++ https://ocaml.org/docs/first-hour
++ https://learnxinyminutes.com/docs/ocaml/
