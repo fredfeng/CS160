@@ -1,4 +1,4 @@
-#+title: Section
+#+title: Section CS160
 #+STARTUP: inlineimages
 * Who am I?
 + My name is Thanawat.  I'm a new BS/MS student and a new TA.
@@ -10,9 +10,10 @@
   questions to the general channel on slack.
 * Installing Ocaml
 + see: https://github.com/fredfeng/CS162/tree/master/sections/sec01
-**  Windows
+**  Install Opam
+***  Windows
 + Windows support for ocaml sucks. There's [[https://github.com/diskuv/dkml-installer-ocaml#readme][dkml]], but  that's 30GB min and an hour of compilation time.. So just use CSIL instead.
-***  CSIL instructions
+****  CSIL instructions
 Should be copy paste. *Don't copy paste commands without understanding it*. The explanation for each command is:  
 1. Download the =opam= binary. =opam= is a  *package manager* (program that installs "packages" - libraries / other programs - for ocaml).
 2. Add =~/.local/bin= to your =PATH=
@@ -29,16 +30,25 @@ Should be copy paste. *Don't copy paste commands without understanding it*. The 
   source ~/.bashrc
   chmod +x opam
   mv opam ~/.local/bin # if .local/bin doesn't exist, create it
-  opam init
 #+end_src
-**  MacOS + use homebrew
+***  MacOS + use homebrew
 #+begin_src sh
   # if you don't already have homebrew
   /bin/bash +c "$(curl +fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew install opam
 #+end_src
-**  Linux + use your  package manager (apt, etc)
+***  Linux + use your  package manager (apt, etc)
 + reason why we can't use the package manager on CSIL is that we don't have root permissions.
+**  Install ocaml + other tools
+#+begin_src sh
+  opam init # make sure you answer "y" to prompts
+  opam install utop
+#+end_src
+
+Note: if you forget to answer "y" to the prompt - make sure you do
+=opam init= again and answer "y" to the prompt. It basically adds an 
+extra line to =.bash_profile= that activates the ocaml environment.
+
 * Ocaml for newbies
 **  The ML "workflow"
 + The programming language (or language in general) and the *tooling of that language* aligns the way you think about and write your program
@@ -64,10 +74,11 @@ Should be copy paste. *Don't copy paste commands without understanding it*. The 
 + Things that are /statements/ in Python are:
   #+begin_src python
   a = 5 # Not an expression either
+  a = 5 + 1
   # This is NOT an expression
   if True: 
       print("true")
-  
+
   #+end_src
 + In Ocaml, you can do things like:
   #+begin_src ocaml
@@ -85,7 +96,7 @@ Should be copy paste. *Don't copy paste commands without understanding it*. The 
   when you are learning, use the interpreter to help you!
 + Example type signature:
   #+begin_src ocaml
-  let id : 'a +> 'a = fun x -> x;;
+  let id : 'a -> 'a = fun x -> x;;
   let y = id 3;; (* The type of "y" is inferred.. but what is the type of y and how do we get that? *)
   #+end_src
 + Application steps for =id 3=
@@ -120,6 +131,10 @@ Should be copy paste. *Don't copy paste commands without understanding it*. The 
   2. How to use the repl for type signatures / tracing
   3. How functions can be composed to solve problems
 + If you haven't got ocaml installed, use: https://try.ocamlpro.com/ to run examples. The interpreter is on the left.
+**  Interpreter tips
++ Use =#use "<my_module>.ml"= to load your file into the interpreter. (Utop or ocaml).
++ Use =#trace <my function>= to trace the calls of that function. See: https://ocaml.org/docs/debugging
++ Use =#typeof "<exp>"= to figure out the type of a top level  variable
 * Further Ocaml resources
 + https://ocaml.org/docs/first-hour
 + https://learnxinyminutes.com/docs/ocaml/

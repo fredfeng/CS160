@@ -22,11 +22,11 @@ Printf.printf "Length of example_list with buggy function is: %d" (buggy_my_len 
 
 (* map - given a function and a list, return a new list with the function to applied to all elements of the given list *)
 (* another way to write functions *)
-let rec my_map (f: ('a -> 'a)) (l: 'a mylist) : 'a mylist = hole;;
+let rec my_map (f: ('a -> 'b)) (l: 'a mylist) : 'b mylist = hole;;
 (* example usage: my_map (fun x -> x + 3) example_list;; *)
 
 (* right associative fold - simpler, but more restrictive, type *)
-let rec my_fold (f: ('a -> 'a -> 'a)) (i: 'a) (l: 'a mylist ): 'a = hole;;
+let rec my_fold (f: ('b -> 'a -> 'b)) (i: 'b) (l: 'a mylist ): 'b = hole;;
 (* example usage: my_fold (fun a b -> a + b) 0 example_list;; *)
 
 

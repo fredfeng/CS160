@@ -35,7 +35,7 @@ let rec my_map (f: ('a -> 'b)) (l: 'a mylist) : 'b mylist =
 (* map + fold *)
 
 (* right associative fold - simpler, but more restrictive, type *)
-let rec my_fold (f: ('a -> 'a -> 'a)) (i: 'a) (l: 'a mylist ): 'a =
+let rec my_fold (f: ('a -> 'a -> 'b)) (i: 'b) (l: 'a mylist ): 'b =
   match l with
   | MNil -> i (* when list is nil*)
   | MCons (h, t) -> f h (my_fold f i t)
