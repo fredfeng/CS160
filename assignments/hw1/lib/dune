@@ -1,0 +1,18 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name lib)
+ (wrapped false)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq))
+ (modules tree hw1_sig))
+
+(library
+ (name hw1)
+ (libraries lib)
+ (preprocess
+  (pps ppx_deriving.show))
+ (modules hw1))
