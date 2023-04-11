@@ -57,7 +57,7 @@ In this assignment, you will get some practice writing simple functions in OCaml
 
 1. (2 pts) `val prepend : 'a -> 'a list -> 'a list` takes an element and a list, and prepends that element to the list. For example, `prepend 1 [2; 3]` evaluates to `[1; 2; 3]`.
 
-2. (3 pts) `val append : 'a -> 'a list -> 'a list` takes an element and a list, and appends that element to the end of the list. For example, `prepend 1 [2; 3]` evaluates to `[2; 3; 1]`.
+2. (3 pts) `val append : 'a -> 'a list -> 'a list` takes an element and a list, and appends that element to the end of the list. For example, `append 1 [2; 3]` evaluates to `[2; 3; 1]`.
 
 3. (3 pts) `val cat : 'a list -> 'a list -> 'a list` concatenates two lists. For example, `cat [1; 2] [3; 4]` evaluates to `[1; 2; 3; 4]`.
 
