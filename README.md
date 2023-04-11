@@ -20,7 +20,7 @@ Sections:
 Instructor's office hour: Wed, 3-4pm, HFH 2157
 
 TA's office hour:
-- Jingtao Xia: Tue 1:30-2:30pm (Phelps 3523)
+- Jingtao Xia: Tue 11am-12pm (Phelps 3523)
 - Junrui Liu: Thur 11am-12pm (Phelps 3523)
 - Thanawat Techaumnuaiwit: Fri 1-2pm (**CSIL**)
 
