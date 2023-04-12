@@ -16,7 +16,8 @@ In this assignment, you will get some practice writing simple functions in OCaml
   
 	 If you don't want to install things globally (it should be easier for our purposes, because you only need to do this once, but for a real project, it's bad practice), see: https://ocamlverse.net/content/quickstart_ocaml_project_dune.html
 
-* You are **not** allowed to use any built-in OCaml functions, except for `List.map`, for any of the problems. If you do, you will not be awarded any points. Note that datatype constructors (e.g., `[]`, `::`, `None`, and `Some`) and patterns (e.g., `| hd::tl -> ...` in a pattern-match) are not considered as functions, so you may freely use them.
+* You are **not** allowed to use any built-in OCaml functions, except for `List.map`, for any of the problems. To clarify, the `@` function for concatenating lists is **not allowed**. If you do, you will not be awarded any points. Note that datatype constructors (e.g., `[]`, `::`, `None`, and `Some`) and patterns (e.g., `| hd::tl -> ...` in a pattern-match) are not considered as functions, so you may freely use them.
+* The ocaml function application operators, `|>` and `@@` are allowed.
 
 * Because you are learning a new programming language and using features that may be unfamiliar to you, we recommend that you start early on this homework.
 
