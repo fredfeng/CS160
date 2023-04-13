@@ -187,6 +187,8 @@ You will implement the following functions:
     then `insert [O;O] 6 t` returns the new trie:
 	
 	<img src="./images/trie-ins.png" width="50%">
+	
+	Edge case: For the case where the key is *longer* than the tree(if you reach the leaf before you can insert), for example, `insert [O; O; O; O; O;]`, insert intermediate `None` Nodes into the tree to extend the tree to allow for those extra nodes, then insert your value. Let me know on slack if you want me to make a diagram for this
 
 ## Submission
 
