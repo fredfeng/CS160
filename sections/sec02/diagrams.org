@@ -1,0 +1,21 @@
+- https://q.uiver.app/?q=WzAsNixbMCw1LCJcXHRleHR7bDogfSdhIFxcdGV4dHsgbGlzdH0iXSxbNSw1LCInYSBcXHRleHR7IGxpc3QgbGlzdH0iXSxbMCwyLCJcXHRleHR7c3VibGlzdHMgOiB9ICAnYSBcXHRleHR7IGxpc3QgbGlzdH0iXSxbNSwyLCJcXHRleHR7cGFydGlhbC1zb2xzOiB9ICAnYSBcXHRleHR7IGxpc3QgbGlzdCBsaXN0fSJdLFswLDAsIlxcdGV4dHtzdWJsaXN0OiB9ICdhIFxcdGV4dHsgbGlzdH0iXSxbNSwwLCJcXHRleHR7cGFydGlhbC1zb2w6IH0gJ2EgXFx0ZXh0eyBsaXN0IGxpc3R9Il0sWzAsMSwiXFx0ZXh0e2Nob29zZX0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkb3R0ZWQifX19XSxbMCwyLCJcXHRleHR7c3VibGlzdH0iXSxbMiwzLCJcXHRleHR7bWFwIHN1Ymxpc3QtdG8tcGFydGlhbC1zb2x9Il0sWzMsMSwiXFx0ZXh0e2ZsYXR0ZW59Il0sWzQsNSwiXFx0ZXh0e3N1Ymxpc3QtdG8tcGFydGlhbC1zb2x9Il1d
+  #+begin_src latex :results file :file images/sig.png
+\begin{tikzcd}
+	{\text{sublist: } 'a \text{ list}} &&&&& {\text{partial-sol: } 'a \text{ list list}} \\
+	\\
+	{\text{sublists : }  'a \text{ list list}} &&&&& {\text{partial-sols: }  'a \text{ list list list}} \\
+	\\
+	\\
+	{\text{l: }'a \text{ list}} &&&&& {\text{sol: } 'a \text{ list list}}
+	\arrow["{\text{choose}}"', dotted, from=6-1, to=6-6]
+	\arrow["{\text{sublist}}", from=6-1, to=3-1]
+	\arrow["{\text{map sublist-to-partial-sol}}", from=3-1, to=3-6]
+	\arrow["{\text{flatten}}", from=3-6, to=6-6]
+	\arrow["{\text{sublist-to-partial-sol}}", from=1-1, to=1-6]
+\end{tikzcd}
+  #+end_src
+
+#+RESULTS:
+#+begin_export latex
+[[file:images/sig.png]]
+#+end_export

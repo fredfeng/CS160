@@ -1,0 +1,172 @@
+#+title: Section 2
+*  Things I'll cover today
++ I want to tell a story of why I like functional programming.
++ Fundamentally, functional programming is about *forgetting unnecessary details*. This is done through *abstraction* (which are just functions).
+* More Ocaml notes
+**  Lexical Scoping
+#+begin_src ocaml
+  (* example *)
+  let lexical =
+    let
+      d = 5
+    in
+    let d = 6
+    in
+    d
+#+end_src
+**  Currying
++ In Ocaml, every function takes in *1* argument and returns *1* value. Well, what about functions with multiple arguments? They are curried! 
+#+begin_src ocaml
+  (* this type signature *)
+  let f : 'a -> 'b -> 'c -> 'd = hole
+  (* is really *)
+  let f : 'a -> ('b -> ('c -> 'd)) = hole
+#+end_src
++ What does currying look like in Python? Here's an example of a "curried" function in python:
+  #+begin_src python
+  def add_curried(a):
+      return lambda b : b + a
+  def add(a,b):
+      return a + b
+ #+end_src
+** Everything is an expression!
++ You can do nested matching like:
+  #+begin_src ocaml
+    let a = Some (Some (3))
+    let b = match a with
+      | Some d ->
+	 begin
+	  match d with
+	  | Some e -> e
+	  | None -> 0
+	end
+      | None -> 0
+    (* You can use parens instead of begin / end as well*)
+    let c = match a with
+      | Some d -> (
+	  match d with
+	  | Some e -> e
+	  | None -> 0
+       )
+      | None -> 0
+
+  #+end_src
+*  What is abstraction?
++ What is similar between (an apple + another apple) and (a banana + another banana)? (Draw a diagram)
++ Abstraction is slicing a *property* of a real world objects and forgetting about the other details!
++ To find "abstractions" - we look for *patterns*. Once we see a pattern in our code, we can come up with an "abstraction" (which can just be a function)  for that pattern.
+**  The "map" abstraction
++ You've seen a "map" for list, but what about other data structures?
+*** The case for the "map" abstraction
++ In your homework, you'll be working on lots of recursion that all have the same "pattern" in the way you write code.
++ (Functional) Programmers are lazy! What if we just defined a higher
+  order function that can "abstract away" these patterns? We'll be
+  doing a bunch of "maps" here but there are other paterns as well
+  that can be abstracted!
+*** How would we define a "map" for trees
++ The type signature of mapping a tree:
+  #+begin_src ocaml
+  (* TODO implement together *)
+  let map_tree : ('a -> 'b) -> 'a tree -> 'b tree = hole
+  let map_tree f t =
+    match Tree with
+    | Leaf -> Leaf
+    | Node (x, l, r) -> Node (f x, map_tree f l, map_tree f r)
+  #+end_src
++ Does this look similar to the type signature for mapping lists?
+**** Fun Exercise: Solve some of the homework problems using map on lists and trees!
++ Look for patterns in the homework problem solutions. What would it be like to use =map_tree= instead of pattern matching?
++ Hint: if you define a =const= combinator, that could help you solve "skeleton" using =map_tree=.
+   =const='s signature looks like:
+  #+begin_src ocaml
+let const : 'a -> 'b -> 'a = hole (* try implementing this function on your own. It's really easy. *)
+  #+end_src
++ Define your own =map= for trees! Remember, helpers are allowed in your homework problems!
+*** How would we define a "map" for the Option type?
++ What would the type signature look like? Take a guess
++ Instead of double-pattern matching, is there a way to use =map_option=
+  instead in your homework? If not, why? What in =map_option='s type
+  signature *restricts your ability* to do that?
+****  =map_option= type signature
+#+begin_src ocaml
+  let map_option : ('a -> 'b) -> 'a option -> 'b option = hole
+  let map_option f option =
+    match option with
+    | Some a -> Some (f a)
+    | None -> None
+#+end_src
+
+*** Giving a name to "things that can be mapped": Functor
++ All of these type signatures look very similar! The pattern is:
+  #+begin_src ocaml
+    let map_generic : ('a -> 'b) -> 'a f -> 'b f = hole
+    (* the "map" also needs to follow laws.. we can ignore them for this talk *)
+    (*     fmap id == id and     fmap (f . g) == fmap f . fmap g *)
+#+end_src
++ Mathematicians love to give names to things.
++ The general name for "things that can be mapped" is a functor! This comes from a field of mathematics called *Category Theory* (Category theorists study the "mathematics of mathematics").
++ You see functors everywhere in code! Hopefully you'll notice a lot more things that can be "mapped".
++ Ocaml also has the notion of "functor" but it's a different notion of functor. When I say "functor" here, I'm talking about a more generic definition.
+  
+*  =permute= - hardest problem on homework. I'll do a similar problem - =choose=
+** The algorithm for solving problems in programming
++ If a problem is too hard *extend it into smaller problems!*. If the smaller problems is still too hard, *continue to extend it!* This would look like: <insert category theory diagrams here>
++ Let's say your problem (modeled as a /transformation/) is:
+[[file:images/cat1.png]]
++ We can extend the problem by doing:
+[[file:images/cat2.png]]
++ Let's image that when we extend the problem, the transformation
+  going from A -> C (g) is trivial, but C -> B is too hard. Well, we
+  can just extend the problem again! (I should've used different
+  letters for 'h' b/c 'h' is a different function now).
+[[file:images/cat3.png]]
++ As you can see, the *composition* of  /i ∘ h ∘ g/ is f (in mathematics, composition is read right-to-left).
+** How would we mechanically compute a list of combinations?
++ see: https://en.wikipedia.org/wiki/Combination - number of k combinations *without* repetition of elements.
++ How would you do this problem mechanically? Is there a pattern?
++ Example
+#+begin_src ocaml
+  choose 3 [1; 2; 3; 4; 5] 
+  (* should output [[1;2;3];[1;2;4];[1;2;5];[1;3;4];[1;3;5];[1;4;5];[2;3;4];[2;3;5];[2;4;5];[3;4;5]] *)
+#+end_src
++ Base case. Instead of thinking about a complex case, what is the output of =choose 1 [1,2,3]=? Or =choose 1 l=?
+  #+begin_src ocaml
+  choose 1 [1;2;3]
+  (* should output [[1]; [2]; [3]] *)
+  #+end_src
++ Now we can *write the base cases* (including the trivial ones).
++ So instead of thinking about how to get the combinations that
+  involve the whole list, *just focus on 1 element at a time* and ignore
+  the other elements! What is the pattern for all the combinations
+  that just involves 1?
+  #+begin_src ocaml
+  (* what is the pattern for the combinations that just involve 1? *)
+  1 : [2;3]
+  1 : [2;4]
+  1 : [2;5]
+  1 : [3;4]
+  1 : [3;5]
+  1 : [4;5]
+  (* where did this list come from?  *)
+  [[2;3]; [2;4]; [2;5]; [3;4] ;[3;5];[4;5]]
+  (* this is just the output of*)
+  choose 2 [2;3;4;5]
+  (* this is just *)
+  List.map (1:) (choose 2 [2; 3; 4; 5;])
+  #+end_src
++ What is the pattern?
+  + For each element, we might take that element and stick it to the combinations of the "other" elements.
+  + This looks just like a =map=! but the types aren't quite right?
++ What else do you need to do to get the correct type signature? Instead of a list of lists, we now have a list of lists of lists! That's not good..
+  + Write a function that "flattens" the list of list for our results.
+  + I'll use the =List.flatten= here but remember, in your solutions, that's NOT allowed. You have to write your own =flatten=
+** The type signatures.
++ In solving this problem, the type signatures, or the /transformations/ we had to employ for the complex case (ignoring some details)
+[[file:images/sig.png]]
++ This is *not a complete diagram of how everything works* but it should give you a big picture understanding of how the solution for =choose= works.
+  + In this diagram, I ignored  the "recursion" for simplicity. This function is abstracted in this diagram:
+    #+begin_src ocaml
+  (* We needed the "n" argument of choose in this function, but I chose to ignore "n" in the diagram for simplicity *)
+  let sl_to_partial_sols = (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t))
+    #+end_src
+
