@@ -51,8 +51,23 @@ In this assignment, you will get some practice writing simple functions in OCaml
 * You can run `dune fmt` to have your code automatically beautified.
 
 * If you are struggling, please ask questions on Slack or come to office hours. In particular, let us know if you need additional practice with recursion.
-
-
+* Note on testing. *When you copy the homework, make sure you copy the
+  `dune` files and `dune-project` as well!* This is very important
+  because your code won't build. You might want to try downloading a
+  zip using this [download github
+  directory](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Ffredfeng%2FCS160%2Ftree%2Fmain%2Fassignments%2Fhw1)
+  tool, if you don't want to clone the CS160 repo. After that:
+  ``` sh
+  dune utop 
+  utop> open Hw1.Listy;; 
+  utop> open Hw1.Treey;; 
+  ```
+  VS Code also has a `utop` integration. See: [vs-code ocaml commands](https://github.com/ocamllabs/vscode-ocaml-platform#commands).
+  For running the tests, do:
+  ```sh
+  dune runtest 
+  ```
+	 *in `hw1` folder/directory* (the directory this readme is located) to run the public tests. **if you do that command somewhere else, it won't work**. If you have questions on running tests, please ask one of the TA on slack (#hw1 channel) or come to our office hours.
 
 ## Part 1: Listy (17 pts)
 
