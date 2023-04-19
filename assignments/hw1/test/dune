@@ -1,5 +1,7 @@
+
 (test
  (name hw1_test)
  (preprocess
   (pps ppx_deriving.show))
+  (modules hw1_test test_lib)
  (libraries alcotest lib hw1))

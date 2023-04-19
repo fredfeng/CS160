@@ -2,7 +2,7 @@ open Tree
 open Hw1
 open Listy
 open Treey
-
+open Test_lib
 (* The tests for Listy *)
 let test_prepend () =
   Alcotest.(check (list int)) "same lists" [ 1; 2; 3 ] (prepend 1 [ 2; 3 ])
@@ -48,23 +48,23 @@ let test_permute () =
 (* The tests for Treey *)
 
 let test_skeleton () =
-  Alcotest.(check string)
+  Alcotest.(check tree_unit)
     "same trees"
     (let t1 = node' () in
      let t2 = node' () in
      let t3 = node () t1 t2 in
      let t4 = node' () in
      let t5 = node () t3 t4 in
-     [%derive.show: unit tree] t5)
+     t5)
     (let t1 = node' 2 in
      let t2 = node' 3 in
      let t3 = node 1 t1 t2 in
      let t4 = node' 4 in
      let t5 = node 0 t3 t4 in
-     [%derive.show: unit tree] (skeleton t5))
+     (skeleton t5))
 
 let test_selfie () =
-  Alcotest.(check string)
+  Alcotest.(check tree_tree_int)
     "same trees"
     (let t1 = node' 1 in
      let t2 = node' 2 in
@@ -72,14 +72,14 @@ let test_selfie () =
      let tt1 = node' t3 in
      let tt2 = node' t3 in
      let tt3 = node t3 tt1 tt2 in
-     [%derive.show: int tree tree] tt3)
+     tt3)
     (let t1 = node' 1 in
      let t2 = node' 2 in
      let t3 = node 0 t1 t2 in
-     [%derive.show: int tree tree] (selfie t3))
+     (selfie t3))
 
 let test_timestamp () =
-  Alcotest.(check string)
+  Alcotest.(check tree_int_string)
     "same trees"
     (let t1 = node' (2, "b") in
      let t2 = node (1, "u") t1 leaf in
@@ -87,14 +87,14 @@ let test_timestamp () =
      let t4 = node' (5, "r") in
      let t5 = node (3, "m") t3 t4 in
      let t6 = node (0, "n") t2 t5 in
-     [%derive.show: (int * string) tree] t6)
+      t6)
     (let t1 = node' "b" in
      let t2 = node "u" t1 leaf in
      let t3 = node' "e" in
      let t4 = node' "r" in
      let t5 = node "m" t3 t4 in
      let t6 = node "n" t2 t5 in
-     [%derive.show: (int * string) tree] (timestamp t6))
+     (timestamp t6))
 
 let nfa_eg =
   let t1 = node' () in
@@ -131,22 +131,25 @@ let trie_inserted =
   t4
 
 let test_insert () =
-  Alcotest.(check string)
+  Alcotest.(check trie_int)
     "same trie"
-    ([%derive.show: int trie] trie_inserted)
-    ([%derive.show: int trie] (insert [ O; O ] 6 trie_eg))
+    (trie_inserted)
+    ((insert [ O; O ] 6 trie_eg))
 
 (* Run it *)
 let () =
   let open Alcotest in
   run "public tests"
     [
+      (* Listy tests *)
       ("prepend", [ test_case "prepend" `Slow test_prepend ]);
       ("append", [ test_case "append" `Slow test_append ]);
       ("cat", [ test_case "cat" `Slow test_cat ]);
       ("zip", [ test_case "zip" `Slow test_zip ]);
       ("zip-fail", [ test_case "zip-fail" `Slow test_zip_fail ]);
       ("permute", [ test_case "permute" `Slow test_permute ]);
+
+      (* Treey tests *)
       ("skeleton", [ test_case "skeleton" `Slow test_skeleton ]);
       ("selfie", [ test_case "selfie" `Slow test_selfie ]);
       ("timestamp", [ test_case "timestamp" `Slow test_timestamp ]);
