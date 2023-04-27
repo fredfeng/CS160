@@ -3,21 +3,18 @@ open Regex
 
 (* Test Binary Regex notation *)
 module TestRegexNotation = struct
+  module Sem = Sem_reference.Make (Alphabet.Ascii)
+  open Sem
   open Syntax.AsciiRegex
 
-  (* Test alts impl *)
+  let test_plus () =
+    Alcotest.(check bool) "same bool" true (Sem.interpret [s 'a'; s 'b'] (plus (c 'a' <|> c 'b')))
+  
   let test_alts () =
-    Alcotest.(check string)
-      "same prog" "(0|(1|(2|(3|(4|(5|(6|(7|(8|(9|<void>))))))))))"
-      (show_program digit)
+    Alcotest.(check bool) "same bool" true (Sem.interpret [s '0'] (digit))
 
   let test_seq () =
-    Alcotest.(check string)
-      "same prog" "(h(e(l(l(o)))))"
-      (seq (List.map c [ 'h'; 'e'; 'l'; 'l'; 'o' ]) |> show_program)
-
-  let test_plus () =
-    Alcotest.(check string) "same prog" "h+" (plus @@ c 'h' |> show_program)
+    Alcotest.(check bool) "same bool" true (Sem.interpret [s 'h'; s 'i'] (seq (List.map c ['h'; 'i'])))
 
   let tests =
     let open Alcotest in
