@@ -1,0 +1,23 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name examples)
+ (libraries regex)
+ (modules examples))
+
+(executable
+ (name test_graph)
+ (libraries ocamlgraph)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.ord))
+ (modules test_graph))
+
+(tests
+ (names tests)
+ (preprocess
+  (pps ppx_deriving.show))
+ (libraries alcotest regex calculator)
+ (modules tests test_regex test_calculator))

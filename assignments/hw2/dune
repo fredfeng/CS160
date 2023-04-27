@@ -1,0 +1,14 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name utils)
+ (public_name utils)
+ (modules utils))
+
+(library
+ (name language)
+ (public_name language)
+ (modules language))

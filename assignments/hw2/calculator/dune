@@ -1,0 +1,11 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name calculator)
+ (public_name calculator)
+ (libraries utils language)
+ (preprocess
+  (pps ppx_deriving.show)))
