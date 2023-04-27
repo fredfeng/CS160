@@ -24,10 +24,7 @@ module Make (A : Alphabet.S) :
   let rec show_program : program -> string = function
     | Void -> "<void>"
     | Lit t -> A.show t
-    | Or (r, Lit e) when A.is_epsilon e -> sp "%s?" (show_program r)
-    | Or (r1, Star r2) when equal_program r1 r2 -> sp "%s+" (show_program r1)
     | Or (r1, r2) -> sp "(%s|%s)" (show_program r1) (show_program r2)
-    | Cat (r, Lit e) when A.is_epsilon e -> sp "(%s)" (show_program r)
     | Cat (r1, r2) -> sp "(%s%s)" (show_program r1) (show_program r2)
     | Star r -> sp "%s*" (show_program r)
 
