@@ -291,7 +291,7 @@ dune utop
 ```
 
 Then in the utop prompt:
-```sh
+```
 utop # open Examples;;
 utop # my_output;;
 - : string = "false"
