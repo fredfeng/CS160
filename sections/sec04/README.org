@@ -1,0 +1,141 @@
+#+title: Section 04
+
+* Homework "workflow"
+
+** How to download the homework (since someone asked) + workflow notes
++ Use https://download-directory.github.io/ to download a zip file of
+  the homework. For this homework specfically, use: [[https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Ffredfeng%2FCS160%2Ftree%2Fmain%2Fassignments%2Fhw2][this link]].
++ After downloading the homework, unzip it and put it onto CSIL. One way is to use =scp= (but you can also use VS Code as well):
+  #+begin_src sh
+scp -r hw2 <your-csil-user>@csil.cs.ucsb.edu
+  #+end_src
+** Make sure to install any additional opam packages
+For this homework, do:
+#+begin_src sh
+opam install odoc ocamlgraph ppx_hash
+#+end_src
+
+Also, make sure to install [[https://graphviz.org/][Graphviz]] as well! (CSIL already has this installed). On Mac do:
+#+begin_src sh
+brew install graphviz
+#+end_src
+
+** Edit the code and run the tests.
++ *Make sure that you copy the* =dune= *and the* =opam= *files* as well! *Use the method for downloading I outlined above*.
++ To run the test, do:
+  #+begin_src sh
+dune runtest
+  #+end_src
++ To run the test in *watch* mode (which will rerun the tests when your files change), do:
+  #+begin_src sh
+dune runtest -w
+  #+end_src
++ *IF your* =dune runtest= isn't working, answer the following questions:
+  + Did you *download the entire hw2 folder WITHOUT just copying over
+    the ml files?* The =dune= and =*.opam= files are *very* important!
+  + Did you *make sure* that you are running =dune runtest= in the =hw2= folder/directory?
+  + If you answered "yes" on those questions and =dune runtest= still
+    doesn't work then.. come to office hours or DM on Slack and one of
+    the TAs will attempt to help to the best of their abilities.. We
+    may need you to screen share / come in-person because students can
+    sometimes do very interesting stuff to their environment that we
+    would've never considered..
+    
+** LSP
++ If you haven't already, install the [[https://github.com/ocaml/ocaml-lsp][Ocaml LSP (Language Server)]] -
+which is a "magic trick" that will hover your type errors for you. In
+the machine you installed =opam= (which could be CSIL) do:
+#+begin_src sh
+opam install ocaml-lsp-server
+#+end_src
+  If you can't install this on CSIL because of disk quota issues, um,
+  I can't really help you unless the professor does something,
+  unfortunately.
++ If you don't have LSP.. the budget trick is to use a value that is guaranteed not to type check:
+  #+begin_src ocaml
+let hole = ()
+  #+end_src
+   This will cause the compiler to throw an error and you can see what
+  the expected type of something is. This doesn't work as well for
+  /polymorphic/ types (or type variables). Ocaml's typechecker is much
+  worse than Haskell's(or Rust's type checker) unfortunately.. 
+** How to read a type error
+A common type error looks like:
+#+begin_src 
+10 | let b = add "hello"
+                 ^^^^^^^
+Error: This expression has type string but an expression was expected of type
+         int
+#+end_src
+
+This means that the type checker /expects/ to see a =string= but the type
+you provided is an =int=. This type error is simple, but debugging type
+expressions with type variables (also known as /polymorphic/ types),
+like =int option= or =int list= might be a bit more confusing.
+
+Another common type error is:
+#+begin_src 
+13 | let c : dummy =  D "hello"
+                      ^^^^^^^^^
+Error: The constructor D expects 0 argument(s),
+       but is applied here to 1 argument(s)
+#+end_src
+
+Generated from this code:
+#+begin_src ocaml
+type dummy = C | D
+let c : dummy =  D "hello"
+#+end_src
+
+This means that you are *using the constructors of the algebraic data
+types wrong*. The =D= constructor of the =dummy= type doesn't provide any
+arguments but here you provided a ="hello"= argument. In general if
+something doesn't compile, *Read The Friendly Type Error* (RTFTE).[fn:1] If
+you DM me on Slack or come to my office hours about something not
+compiling, I will *first ask you if you read the type error or not*.
+Feel free to search up the type error as well, if you don't know what
+it means.
+
+* Homework 2 special notes
+See our notes in [[file:../../assignments/hw2/README.md][The HW2 README]] (which I contributed to). Also, module
+demo in [[./section04.ml][section04.ml]]. There's a lot of noise in the signature of the
+modules, that's because Ocaml's type checker needs a lot of help to do
+it's job properly, unfortunately[fn:2]. 
+
+Before you ask any questions about the homework, please: *Read The
+Friendly README* or RTFR for short before asking. If you are struggling
+with the mental overhead of Functors, modules, what to do, *READ THE
+README* then ask a question. Thank you so much. Reading is a very
+important life skill.. If the README doesn't explain something well,
+or if you are still confused after, then feel free to ask in the
+public HW2 chat or DM us on Slack.
+
+** Functor[fn:3]s - Ocaml's budget Type classes (Traits in Rust)
+[[file:images/meme.jpg]]
+
+*  Cool papers / articles you should checkout
+- https://abuseofnotation.github.io/category-theory-illustrated/ - this is kind of cool too!
+- https://www.researchgate.net/publication/228786841_Modeling_Quantum_Computing_in_Haskell
+  - this paper taught me more about QC than the lectures I go to ...
+  - Also, Haskell!! (Lots of list comprehension in this paper though -
+    a feature you prob haven't encountered:
+    https://wiki.haskell.org/List_comprehension - very useful for
+    modeling sets and products of sets)
+- https://arxiv.org/pdf/2004.03082.pdf - egg is really cool rewrite-rule system written in Rust!
+  - https://github.com/egraphs-good/egg
+* COMMENT NOTHING TO SEE HERE :D
+# Shameless plug (check slack - I don't want this immortalized..)
+# Here's the discord link .. hidden in plain sight :D
+# https://discord.gg/Y4BE8uAD
+# Anyways, join my club, SBKB if you want to learn more about mechanical
+# keyboards or are into them already. (TODO post link to discord on random)
+
+* Footnotes
+
+[fn:3]  https://abuseofnotation.github.io/category-theory-illustrated/06_functors/ -
+here's an article about Functors in Category Theory. Ocaml's use of the word
+"Functor" are more like a lose metaphor for the actual definition in Category Theory.
+[fn:2] Ocaml is not my favorite language.. if that's not already obvious.
+Haskell, even though it has it's fair share of problems, is still much
+better, even for beginners, imo..
+[fn:1] Doesn't quite roll off the tounge as RTFM - https://en.wikipedia.org/wiki/RTFM 

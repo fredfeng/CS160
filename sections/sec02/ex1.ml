@@ -32,11 +32,11 @@ let rec choose (n: int) (l: 'a list) : 'a list list =
   | 0, l -> []
   | n, [] -> []
   | 1, l -> List.map (fun a -> [a]) l
-  | n, l -> sublist l |> flatMap (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t))
+  | n, l ->  List.flatten (List.map (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t)) (sublist l))
 [@@@ warning "+8"]
      (* The less "prettier" version of the same thing
-        List.flatten (List.map (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t)) (sublist l))
-        
+       
+     sublist l |> flatMap (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t))    
         let sl-to-partial-sols = (fun (h::t) -> List.map (fun list -> h::list) (choose (n-1) t))
 
         

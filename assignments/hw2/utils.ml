@@ -1,5 +1,8 @@
 let todo () = failwith "TODO"
 
+(** A "hole" is a value that is guaranteed to trigger the type-checker *)
+let hole = ()
+
 (** Function composition. *)
 let compose g f x = x |> f |> g
 
