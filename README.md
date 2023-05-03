@@ -44,7 +44,7 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 | 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  hw3 (tentative)   |    |
 | 5/17 |  Type Checking II                     |  lec13       |      |     |    |
 | 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
-| 5/24  | Midterm (take-home)|        |      |  hw4 (tentative)   |  hw3 (tentative)   |
+| 5/24  | TBD |        |      |  hw4 (tentative)   |  hw3 (tentative)   |
 | 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |     |    |
 | 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf)       |       |     |     |
 | 6/5 | Optimization II                |        |     |      |   |
