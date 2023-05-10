@@ -40,7 +40,7 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 | 5/1 | More about parsing | [lec9](lectures/lecture9.pdf)    |     |     |   |
 | 5/3 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
 | 5/8 | - | | | | hw2 (tentative) |
-| 5/10 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
+| 5/10 |    Type System and Soundness       | [lec11](lectures/fv-intro.pdf)        |      |    |  |
 | 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  hw3 (tentative)   |    |
 | 5/17 |  Type Checking II                     |  lec13       |      |     |    |
 | 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
