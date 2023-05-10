@@ -42,7 +42,7 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 | 5/8 | - | | | | hw2 (tentative) |
 | 5/10 |    Type System and Soundness       | [lec11](lectures/fv-intro.pdf)        |      |    |  |
 | 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  hw3 (tentative)   |    |
-| 5/17 |  Type Checking II                     |  lec13       |      |     |    |
+| 5/17 |  Type Checking II                     |  [lec13](https://github.com/fredfeng/CS160/blob/fall-2021/assignments/as3/types/type.pdf)       |      |     |    |
 | 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | |     |
 | 5/24  | TBD |        |      |  hw4 (tentative)   |  hw3 (tentative)   |
 | 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |     |    |
