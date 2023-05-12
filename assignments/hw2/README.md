@@ -1,6 +1,19 @@
 # CS160 Assignment 2
 
 **Due: Monday, May 8th 11:59pm**
+## Submission Notes
+To submit, make sure you only submit these files (You can click the "Browse Files" link to upload from  multiple directories, or just drag and drop the right files from your file manager, i.e. Finder or the Windows folder thing):
+```
+ ["impl.ml", "sem_efficient.ml", "sem_reference.ml", "syntax.ml"]
+```
+Don't submit your entire hw2 directory. This won't work. Again, only public tests are available. (thus only 10 points, but there'll be more points added later on).
+If your submission doesn't autograde on the public tests, feel free to DM me, and I'll investigate your submission.
+
+**Make sure to not print anything or draw out any graphs in your
+submission as it'll break the autograder regex**. If you pass local
+tests, but the autograder gives you a 0, then it's probably because of
+that.
+
 
 ## Prerequisites
 1. For this project, we'll need more dependencies from `opam`. Do:
