@@ -40,17 +40,17 @@ Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CA
 | 5/1 | More about parsing | [lec9](lectures/lecture9.pdf)    |     |     |   |
 | 5/3 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
 | 5/8 | - | | | | hw2 (tentative) |
-| 5/10 |    Type System and Soundness       | [lec11](lectures/lecture11.pdf)        |      |    |  |
+| 5/10 |    Type System and Soundness       | [lec11](lectures/fv-intro.pdf)        |      |    |  |
 | 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  [hw3](./assignments/hw3/)   |    |
-| 5/17 |  Type Checking II                     |  lec13       |      |     |    |
-| 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | hw4 (tentative) | hw3 |
-| 5/24  | Midterm (take-home)|        |      |     |   |
-| 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |   hw5 (tentative)  |   hw4 (tentative) |
+| 5/17 |  Type Checking II                     |  [lec13](https://github.com/fredfeng/CS160/blob/fall-2021/assignments/as3/types/type.pdf)       |      |     |    |
+| 5/22  |  Code Generation  I  | [lec14](lectures/lecture14.pdf) |      | hw4 (tentative) |  hw3   |
+| 5/24  | TBD |        |      |    |     |
+| 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |   hw5 (tentative)   |   hw4 |
 | 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf)       |       |     |     |
 | 6/5 | Optimization II                |        |     |      |   |
 | 6/7 | Optimization III        |         |      |     |    |
 | TBD  | Final week, no class                                 |        |      |     |    |
-| 6/12 | - | | | | hw5 (tentative) |
+| 6/12 | - | | | |  hw5 (tentative) |
 
 
 # Grading
