@@ -4,6 +4,8 @@ Due: Monday May 22 11:59PM
 
 This assignment has two parts. In Part 1, you will write a parser for the calculator language. In Part 2, you will use an existing lexer/parser generator to specify the grammar for the Patina programming language, for which you'll be writing a complete compiler in this and future assignments!
 
+Click [this link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Ffredfeng%2FCS160%2Ftree%2Fmain%2Fassignments%2Fhw3) to download the homework.
+
 ## Part 1: Parsing the Calculator Language
 
 > Directory: [part1/](./part1/)
