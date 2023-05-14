@@ -1,0 +1,49 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name utils)
+ (preprocess
+  (pps ppx_hash))
+ (modules utils))
+
+(library
+ (name language)
+ (modules language))
+
+(library
+ (name mylexer)
+ (libraries utils regex)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq ppx_deriving.ord ppx_hash))
+ (modules mylexer))
+
+(library
+ (name myparser)
+ (libraries ocamlgraph utils mylexer)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq ppx_deriving.ord ppx_hash))
+ (modules myparser))
+
+(library
+ (name test_lexer)
+ (libraries utils alcotest mylexer)
+ (preprocess
+  (pps ppx_deriving.show))
+ (modules test_lexer))
+
+(library
+ (name test_parser)
+ (libraries utils alcotest mylexer myparser)
+ (preprocess
+  (pps ppx_deriving.show))
+ (modules test_parser))
+
+(tests
+ (names tests)
+ (libraries alcotest test_lexer test_parser)
+ (preprocess
+  (pps ppx_deriving.show))
+ (modules tests))
