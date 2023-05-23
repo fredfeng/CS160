@@ -1,0 +1,10 @@
+fn main() -> unit {
+	let b : bool = 5!=3;
+	let c : bool = (b==false);
+	if (34 <= b) then {
+		print_bool(b)
+	}
+	else{
+		print_ln()
+	}
+}

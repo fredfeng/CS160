@@ -1,0 +1,10 @@
+fn main() -> unit {
+	let b : bool = 5!=3;
+	let c : bool = (b==false);
+	if ({let x : int = 222; x/2} <= if c then {if x < 3 then {true} else {false}} else {false}) then {
+		print_bool(b)
+	}
+	else{
+		print_ln()
+	}
+}

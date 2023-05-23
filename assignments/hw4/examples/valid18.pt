@@ -1,0 +1,9 @@
+fn notmain() -> int {
+	4
+}
+
+fn main() -> unit {
+	let x : int = notmain();
+	let notmain : bool = true;
+	if notmain then {(x=3)} else {()}
+}

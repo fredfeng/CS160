@@ -1,0 +1,13 @@
+fn main() -> unit {
+	let b : bool = 5!=3;
+	let c : bool = (b==false);
+	let d : bool = (3 < 4);
+	let x : int = 98;
+	if (d && (x == d) && 34 <= x) then {
+		print_bool(d);
+		print_int(x)
+	}
+	else{
+		print_ln()
+	}
+}

@@ -1,0 +1,13 @@
+fn notmain(x:int,f:int) -> int {
+	let f : bool = {
+		let x : bool = true;
+		x || (f == 23)
+	};
+	if f then {x} else {x+2}
+}
+
+fn main() -> unit {
+	let t : int = 3;
+	if (t==notmain(notmain(2,3))) then {print_int(t)} else {print_int(90)};
+	t = 99
+}

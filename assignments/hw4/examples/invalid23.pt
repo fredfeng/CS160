@@ -1,0 +1,9 @@
+fn main() -> unit {
+	let b : [int] = alloc(5);
+	let x : int = 45;
+	{
+		c[{let vv : int = 43; vv - 3}] = vv
+	};
+	let t : unit = print_int(b[x]);
+	t
+}

@@ -1,0 +1,10 @@
+fn main() -> unit {
+	let b : bool = 5!=3;
+	let c : bool = (b==false);
+	let x : int = 456;
+	let z : int = {
+		let y : bool = x<500 && c;
+		if {x<2} then {x;let c:int = 1; c} else {c*3}
+	};
+	print_int(z)
+}

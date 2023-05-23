@@ -1,0 +1,12 @@
+(env
+ (dev
+  (flags (:standard -warn-error -A))))
+
+(executable
+ (name patina)
+ (preprocess (pps ppx_deriving.show))
+ (modules patina ast scanner parser typecheck error)
+ (modes exe))
+
+(ocamllex scanner)
+(ocamlyacc parser)

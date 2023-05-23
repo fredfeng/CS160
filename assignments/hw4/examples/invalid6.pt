@@ -1,0 +1,7 @@
+fn main() -> unit {
+	true;
+	let x : bool = true;
+	let z : int = 879;
+	let y : bool = if x then {let w : bool = false; w} else {let w : bool = x != 879; w == x} || (w && x);
+	()
+}

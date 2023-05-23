@@ -1,0 +1,8 @@
+fn notmain(x:bool) -> int {
+	if x then {89} else {32}
+}
+
+fn main() -> unit {
+	let t : int = 3;
+	if (t==notmain(true)) then {print_int(t)} else {print_int(0)}
+}

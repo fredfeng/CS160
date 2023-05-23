@@ -1,0 +1,7 @@
+fn notmain(x:int,f:int) -> int {
+	let f : bool = {
+		let x : bool = true;
+		x || f
+	};
+	if f then {x} else {x+2}
+}

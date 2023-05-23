@@ -1,0 +1,6 @@
+fn main() -> unit {
+	let x : int = 5;
+	let z : unit = ();
+	let y : int = x + z;
+	()
+}
