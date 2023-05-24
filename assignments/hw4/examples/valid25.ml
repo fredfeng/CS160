@@ -4,7 +4,12 @@
     param = [ ("x", Ast.TBool) ];
     body =
       Ast.Seq
-        [ Ast.Ite (Ast.Id "x", Ast.Seq [ Ast.Int 89 ], Ast.Seq [ Ast.Int 32 ]) ];
+        [
+          Ast.Ite
+            ( Ast.Id "x",
+              Ast.Seq [ Ast.Const (Ast.CInt 89) ],
+              Ast.Seq [ Ast.Const (Ast.CInt 32) ] );
+        ];
     return = Ast.TInt;
   };
   {
@@ -13,7 +18,7 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("t", Ast.TInt, Ast.Int 3);
+          Ast.Let ("t", Ast.TInt, Ast.Const (Ast.CInt 3));
           Ast.Ite
             ( Ast.Binary
                 ( Ast.Eq,
@@ -23,11 +28,11 @@
                       [
                         Ast.Binary
                           ( Ast.Eq,
-                            Ast.Call ("notmain", [ Ast.Bool false ]),
-                            Ast.Int 89 );
+                            Ast.Call ("notmain", [ Ast.Const (Ast.CBool false) ]),
+                            Ast.Const (Ast.CInt 89) );
                       ] ) ),
-              Ast.Seq [ Ast.PrintInt (Ast.Id "t") ],
-              Ast.Seq [ Ast.PrintInt (Ast.Int 90) ] );
+              Ast.Seq [ Ast.Call ("print_int", [ Ast.Id "t" ]) ],
+              Ast.Seq [ Ast.Call ("print_int", [ Ast.Const (Ast.CInt 90) ]) ] );
         ];
     return = Ast.TUnit;
   };

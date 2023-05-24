@@ -5,9 +5,11 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("x", Ast.TBool, Ast.Bool true);
+          Ast.Let ("x", Ast.TBool, Ast.Const (Ast.CBool true));
           Ast.Let
-            ("y", Ast.TBool, Ast.Binary (Ast.Or, Ast.Id "x", Ast.Bool false));
+            ( "y",
+              Ast.TBool,
+              Ast.Binary (Ast.Or, Ast.Id "x", Ast.Const (Ast.CBool false)) );
           Ast.Let
             ( "z",
               Ast.TBool,
@@ -16,9 +18,10 @@
                   Ast.Binary (Ast.Neq, Ast.Id "x", Ast.Id "y"),
                   Ast.Binary
                     ( Ast.Or,
-                      Ast.Binary (Ast.Eq, Ast.Id "y", Ast.Bool false),
+                      Ast.Binary
+                        (Ast.Eq, Ast.Id "y", Ast.Const (Ast.CBool false)),
                       Ast.Unary (Ast.Not, Ast.Id "y") ) ) );
-          Ast.Unit;
+          Ast.Const Ast.CUnit;
         ];
     return = Ast.TUnit;
   };

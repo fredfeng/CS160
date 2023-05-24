@@ -5,10 +5,16 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("b", Ast.TBool, Ast.Binary (Ast.Neq, Ast.Int 5, Ast.Int 3));
           Ast.Let
-            ("c", Ast.TBool, Ast.Binary (Ast.Eq, Ast.Id "b", Ast.Bool false));
-          Ast.Let ("x", Ast.TInt, Ast.Int 456);
+            ( "b",
+              Ast.TBool,
+              Ast.Binary
+                (Ast.Neq, Ast.Const (Ast.CInt 5), Ast.Const (Ast.CInt 3)) );
+          Ast.Let
+            ( "c",
+              Ast.TBool,
+              Ast.Binary (Ast.Eq, Ast.Id "b", Ast.Const (Ast.CBool false)) );
+          Ast.Let ("x", Ast.TInt, Ast.Const (Ast.CInt 456));
           Ast.Seq
             [
               Ast.Let
@@ -16,14 +22,14 @@
                   Ast.TBool,
                   Ast.Binary
                     ( Ast.And,
-                      Ast.Binary (Ast.Lt, Ast.Id "x", Ast.Int 500),
+                      Ast.Binary (Ast.Lt, Ast.Id "x", Ast.Const (Ast.CInt 500)),
                       Ast.Id "c" ) );
               Ast.Ite
                 ( Ast.Id "y",
-                  Ast.Seq [ Ast.PrintBool (Ast.Id "c") ],
-                  Ast.Seq [ Ast.PrintInt (Ast.Id "x") ] );
+                  Ast.Seq [ Ast.Call ("print_bool", [ Ast.Id "c" ]) ],
+                  Ast.Seq [ Ast.Call ("print_int", [ Ast.Id "x" ]) ] );
             ];
-          Ast.Unit;
+          Ast.Const Ast.CUnit;
         ];
     return = Ast.TUnit;
   };

@@ -5,10 +5,10 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("x", Ast.TInt, Ast.Int 5);
-          Ast.Let ("z", Ast.TUnit, Ast.Unit);
+          Ast.Let ("x", Ast.TInt, Ast.Const (Ast.CInt 5));
+          Ast.Let ("z", Ast.TUnit, Ast.Const Ast.CUnit);
           Ast.Let ("y", Ast.TInt, Ast.Binary (Ast.Add, Ast.Id "x", Ast.Id "z"));
-          Ast.Unit;
+          Ast.Const Ast.CUnit;
         ];
     return = Ast.TUnit;
   };

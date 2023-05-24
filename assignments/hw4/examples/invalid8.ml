@@ -5,13 +5,19 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("b", Ast.TBool, Ast.Binary (Ast.Neq, Ast.Int 5, Ast.Int 3));
           Ast.Let
-            ("c", Ast.TBool, Ast.Binary (Ast.Eq, Ast.Id "b", Ast.Bool false));
+            ( "b",
+              Ast.TBool,
+              Ast.Binary
+                (Ast.Neq, Ast.Const (Ast.CInt 5), Ast.Const (Ast.CInt 3)) );
+          Ast.Let
+            ( "c",
+              Ast.TBool,
+              Ast.Binary (Ast.Eq, Ast.Id "b", Ast.Const (Ast.CBool false)) );
           Ast.Ite
-            ( Ast.Binary (Ast.Leq, Ast.Int 34, Ast.Id "b"),
-              Ast.Seq [ Ast.PrintBool (Ast.Id "b") ],
-              Ast.Seq [ Ast.PrintLn ] );
+            ( Ast.Binary (Ast.Leq, Ast.Const (Ast.CInt 34), Ast.Id "b"),
+              Ast.Seq [ Ast.Call ("print_bool", [ Ast.Id "b" ]) ],
+              Ast.Seq [ Ast.Call ("print_ln", []) ] );
         ];
     return = Ast.TUnit;
   };

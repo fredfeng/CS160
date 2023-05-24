@@ -2,7 +2,7 @@
   {
     Ast.name = "notmain";
     param = [];
-    body = Ast.Seq [ Ast.Int 4 ];
+    body = Ast.Seq [ Ast.Const (Ast.CInt 4) ];
     return = Ast.TInt;
   };
   {
@@ -11,8 +11,11 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("notmain", Ast.TBool, Ast.Bool true);
-          Ast.Ite (Ast.Id "notmain", Ast.Seq [ Ast.Unit ], Ast.Seq [ Ast.Unit ]);
+          Ast.Let ("notmain", Ast.TBool, Ast.Const (Ast.CBool true));
+          Ast.Ite
+            ( Ast.Id "notmain",
+              Ast.Seq [ Ast.Const Ast.CUnit ],
+              Ast.Seq [ Ast.Const Ast.CUnit ] );
         ];
     return = Ast.TUnit;
   };

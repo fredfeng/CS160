@@ -2,7 +2,7 @@
   {
     Ast.name = "notmain";
     param = [];
-    body = Ast.Seq [ Ast.Int 89 ];
+    body = Ast.Seq [ Ast.Const (Ast.CInt 89) ];
     return = Ast.TInt;
   };
   {
@@ -11,18 +11,18 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("t", Ast.TInt, Ast.Int 3);
+          Ast.Let ("t", Ast.TInt, Ast.Const (Ast.CInt 3));
           Ast.Ite
             ( Ast.Binary (Ast.Eq, Ast.Id "t", Ast.Call ("notmain", [])),
-              Ast.Seq [ Ast.PrintInt (Ast.Id "t") ],
-              Ast.Seq [ Ast.PrintInt (Ast.Id "x") ] );
+              Ast.Seq [ Ast.Call ("print_int", [ Ast.Id "t" ]) ],
+              Ast.Seq [ Ast.Call ("print_int", [ Ast.Id "x" ]) ] );
         ];
     return = Ast.TUnit;
   };
   {
     Ast.name = "notmain";
     param = [];
-    body = Ast.Seq [ Ast.Bool true ];
+    body = Ast.Seq [ Ast.Const (Ast.CBool true) ];
     return = Ast.TInt;
   };
 ]

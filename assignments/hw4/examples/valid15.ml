@@ -5,10 +5,10 @@
     body =
       Ast.Seq
         [
-          Ast.Let ("x", Ast.TInt, Ast.Int 45);
-          Ast.Assign ("x", Ast.Int 23);
-          Ast.Let ("t", Ast.TUnit, Ast.PrintInt (Ast.Id "x"));
-          Ast.Assign ("x", Ast.Int 456);
+          Ast.Let ("x", Ast.TInt, Ast.Const (Ast.CInt 45));
+          Ast.Assign ("x", Ast.Const (Ast.CInt 23));
+          Ast.Let ("t", Ast.TUnit, Ast.Call ("print_int", [ Ast.Id "x" ]));
+          Ast.Assign ("x", Ast.Const (Ast.CInt 456));
         ];
     return = Ast.TUnit;
   };

@@ -5,9 +5,9 @@
     body =
       Ast.Seq
         [
-          Ast.Bool true;
-          Ast.Let ("x", Ast.TBool, Ast.Bool true);
-          Ast.Let ("z", Ast.TInt, Ast.Int 879);
+          Ast.Const (Ast.CBool true);
+          Ast.Let ("x", Ast.TBool, Ast.Const (Ast.CBool true));
+          Ast.Let ("z", Ast.TInt, Ast.Const (Ast.CInt 879));
           Ast.Let
             ( "y",
               Ast.TBool,

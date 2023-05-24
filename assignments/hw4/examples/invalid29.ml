@@ -10,13 +10,14 @@
               Ast.TBool,
               Ast.Seq
                 [
-                  Ast.Let ("x", Ast.TBool, Ast.Bool true);
+                  Ast.Let ("x", Ast.TBool, Ast.Const (Ast.CBool true));
                   Ast.Binary (Ast.Or, Ast.Id "x", Ast.Id "f");
                 ] );
           Ast.Ite
             ( Ast.Id "f",
               Ast.Seq [ Ast.Id "x" ],
-              Ast.Seq [ Ast.Binary (Ast.Add, Ast.Id "x", Ast.Int 2) ] );
+              Ast.Seq
+                [ Ast.Binary (Ast.Add, Ast.Id "x", Ast.Const (Ast.CInt 2)) ] );
         ];
     return = Ast.TInt;
   };

@@ -35,7 +35,14 @@
   {
     Ast.name = "notmain";
     param = [ ("x", Ast.TInt); ("f", Ast.TInt); ("d", Ast.TBool) ];
-    body = Ast.Seq [ Ast.Call ("print_ln", []); Ast.Const (Ast.CInt 32) ];
+    body =
+      Ast.Seq
+        [
+          Ast.Call ("print_ln", [ Ast.Id "f" ]);
+          Ast.Let
+            ("r", Ast.TArr, Ast.Call ("alloc", [ Ast.Const (Ast.CInt 45) ]));
+          Ast.Const (Ast.CInt 32);
+        ];
     return = Ast.TInt;
   };
 ]
