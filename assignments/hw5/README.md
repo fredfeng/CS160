@@ -2,6 +2,8 @@
 
 **Due: Tuesday, June 13th, 11:59PM**
 
+> Click this [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Ffredfeng%2FCS160%2Ftree%2Fmain%2Fassignments%2Fhw5) to download the homework.
+
 In this assignment, you will be compiling Patina programs to lower-level intermediate representations (IR) called LLVMlite.
 
 
