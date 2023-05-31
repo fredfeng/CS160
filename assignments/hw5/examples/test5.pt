@@ -1,0 +1,3 @@
+fn main() -> unit {
+    print_int({let y : int = 1; while (true && y<3) {y = y+y}; y+1})
+}

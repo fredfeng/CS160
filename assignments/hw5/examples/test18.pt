@@ -1,0 +1,23 @@
+fn main() -> unit {
+	let c : int = 0;
+	let p : int = 2;
+	let max : int = 70;
+	while (p<max){
+		let y : int = 2;
+		while (y * y <=p){
+			let z : int = 2;
+			let b : bool = false;
+			while (z * y <= p){
+				b = (z * y == p) || b;
+				z = z + 1
+			};
+			if b then {c = c} else {c = c+1};
+			y = y+1
+		};
+		p = p+1
+	};
+	print_int(c);
+	print_ln();
+	print_int(p);
+	print_ln()
+}

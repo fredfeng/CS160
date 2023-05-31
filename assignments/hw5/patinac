@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+out=prog
+if [ -z "$1" ]; then
+  echo "Usage: $0 {filename}.pt [outfile]"
+  echo "outfile is optional and defaults to \"$out\""
+  exit 1
+fi
+
+if ! [ -z "$2" ]; then
+  out="$2"
+fi
+
+filename="${1%.*}"
+
+dune exec -- ./patina.exe $filename.pt -o $filename.ll
+clang -O1 $filename.ll runtime.c -o $out
+echo "Saving compiled LLVM program to $out"

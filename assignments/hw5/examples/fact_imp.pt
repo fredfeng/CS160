@@ -1,0 +1,13 @@
+fn main() -> unit {
+    print_int(fact(10));
+    print_ln()
+}
+
+fn fact(n: int) -> int {
+    let m : int = 1;
+    while (n > 0) {
+        m = m * n;
+        n = n - 1
+    };
+    m
+}

@@ -1,0 +1,7 @@
+fn main() -> unit {
+	let a17 : int = 17;
+	while (a17 != 17 && a17 > 16){
+		a17 = 16
+	};
+	print_int(a17)
+}

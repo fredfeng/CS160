@@ -1,0 +1,39 @@
+fn mod(a: int, b: int) -> int {
+    if a > b then {
+        a - a/b * b
+    } else {
+        b - b/a * a
+    }
+}
+
+fn gcd(a: int, b: int) -> int {
+    while (b > 0) {
+        let a0 : int = a;
+        a = b;
+        b = mod(a0, b)
+    };
+    a
+}
+
+fn pow(n: int, k: int) -> int {
+    let r : int = 1;
+    while k > 0 {
+        r = r * n;
+        k = k - 1
+    };
+    r
+}
+
+fn pi(n: int) -> unit {
+    // print an int on a new line
+    print_int(n);
+    print_ln()
+}
+
+fn main() -> unit {
+    let p: int = pow(2,63)-25;
+    let q: int = pow(2,31)-1;
+    pi(p);
+    pi(q);
+    pi(gcd(p,q))
+}

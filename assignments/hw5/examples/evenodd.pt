@@ -1,0 +1,24 @@
+fn even(n: int) -> bool {
+    if n == 0 then { true } else { 
+        if n == 1 then { false } else {
+        print_int(n);
+        print_ln();
+        odd(n-1) }
+    }
+}
+
+fn odd(n: int) -> bool {
+    if n == 0 then { false } else { 
+        if n == 1 then { true } else {
+            print_int(n);
+            print_ln();
+            even(n-1) }
+    }
+}
+
+fn main() -> unit {
+    print_bool(even(5));
+    print_ln();
+    print_bool(odd(5));
+    print_ln()
+}

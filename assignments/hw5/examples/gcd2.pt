@@ -1,0 +1,38 @@
+fn gcd(a: int, b: int) -> int {
+    let i : int = 0;
+    while (a != b) {
+        let a0: int = a;
+        let b0: int = b;
+        if (a0 > b0) then {
+            a = b0;
+            b = a0 - b0
+        } else {
+            a = a0;
+            b = b0 - a0
+        }
+    };
+    a
+}
+
+fn pow(n: int, k: int) -> int {
+    let r : int = 1;
+    while k > 0 {
+        r = r * n;
+        k = k - 1
+    };
+    r
+}
+
+fn pi(n: int) -> unit {
+    // print an int on a new line
+    print_int(n);
+    print_ln()
+}
+
+fn main() -> unit {
+    let p: int = pow(2,63)-25;
+    let q: int = pow(2,31)-1;
+    pi(p);
+    pi(q);
+    pi(gcd(p,q))
+}

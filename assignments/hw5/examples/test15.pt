@@ -1,0 +1,10 @@
+fn main() -> unit {
+	let result : int = 10 + if true then
+	{if false then {1} else
+		{if true && false then {2} else
+			{while(false){let a : int = 4};
+			if (true && true) || (true && false) then {5} else {6}}
+		}
+	} else {3};
+	print_int(result)
+}

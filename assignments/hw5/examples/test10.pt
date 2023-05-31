@@ -1,0 +1,21 @@
+fn foo(e: int) -> int {
+	let c : int = 0;
+	let n1 : int = 0;
+	let n2 : int = 1;
+	
+	while (e > 0) {
+		n1 = n1 * 2 - 1;
+		n2 = n2 * 2;
+		n1 = n1 * 2 - 1;
+		n2 = n2 * 2;
+		let b : bool = n1 >= 0 || n2 <= 0;
+		c = c + if b || (n1 < n2) then {1} else {0};
+		e = e-1
+	};
+	c
+}
+
+fn main() -> unit {
+	let result : int = foo(10);
+	print_int(result)
+}

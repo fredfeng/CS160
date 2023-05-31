@@ -1,0 +1,8 @@
+fn main() -> unit {
+	let a1 : int = 1;
+	let a2 : int = 2;
+	let a3 : int = 3;
+	let a4 : int = 4;
+	let x  : int = if {let a5 : int = 5; a5 + a2 < a1 + a3 + a4} then {let a21 : int = 21; a21 - a1 - a2 - a3 - a4} else {111};
+	print_int(x)
+}

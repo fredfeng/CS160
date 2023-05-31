@@ -1,0 +1,3 @@
+fn main() -> unit {
+    print_int({let x : int = {let y : int = 4; if (y!=y) then {2} else {4}}; let y:int = {if(x=x-1)==({let z:int = 2}) then {3} else {5}};x*y})
+}

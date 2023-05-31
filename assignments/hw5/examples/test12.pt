@@ -1,0 +1,15 @@
+fn main() -> unit {
+	let l1 : int = 1;
+	print_int(
+	{
+		let l1 : int = 2;
+		let l1 : int = 3;
+		l1 + l1
+	} +
+	{
+		let l2 : int = l1;
+		let l1 : int = l2 + l2;
+		let l3 : int = l1 + l2;
+		l1 + l2 + l3
+	})
+}

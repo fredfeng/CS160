@@ -1,0 +1,5 @@
+fn main() -> unit {
+    print_int(
+        10-{let x : int = 1; let x: int = 2; let x: int = 1; let x: int = 1; let x : int = 1; let x : int = 1; let x : int = 3; let x : int = 9; x}
+    )
+}

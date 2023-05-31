@@ -1,0 +1,34 @@
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(library
+ (name ast)
+ (wrapped false)
+ (preprocess
+  (pps ppx_deriving.show ppx_deriving.eq))
+ (modules ast astlib error))
+
+(library
+ (name front_end)
+ (wrapped false)
+ (libraries ast)
+ (modules parser scanner))
+
+(library
+ (name back_end)
+ (wrapped false)
+ (preprocess
+  (pps ppx_deriving.show))
+ (libraries ast front_end ll)
+ (modules typecheck compile))
+
+(executable
+ (name patina)
+ (libraries front_end back_end)
+ (modules patina))
+
+(ocamllex scanner)
+
+(ocamlyacc parser)
