@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=new style 0] (0) at (-7, 14) {A};
+		\node [style=new style 0] (1) at (-8, 11) {B};
+		\node [style=new style 0] (2) at (-6, 11) {C};
+		\node [style=new style 0] (3) at (-7, 9) {D};
+		\node [style=none] (4) at (-4.75, 13) {$\lnot$p(input')};
+		\node [style=none] (5) at (-9, 13) {p(input')};
+		\node [style=none] (6) at (-7, 16.25) {};
+		\node [style=none] (8) at (-8.75, 10) {true};
+		\node [style=none] (9) at (-5, 10) {true};
+		\node [style=none] (10) at (-7, 16.75) {input};
+		\node [style=none] (11) at (-7, 7.5) {};
+		\node [style=none] (12) at (-7, 7) {return};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=new edge style 0] (0) to (1);
+		\draw [style=new edge style 0] (0) to (2);
+		\draw [style=new edge style 0] (1) to (3);
+		\draw [style=new edge style 0] (2) to (3);
+		\draw [style=new edge style 0] (6.center) to (0);
+		\draw [style=new edge style 0] (3) to (11.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
