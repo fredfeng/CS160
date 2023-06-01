@@ -12,9 +12,9 @@ fn main() -> unit {
 		c = c+1
 	};
 	let u2 : unit = while c > 0 {
-		c = c - 1
+		c = c - 1;
 		a13 = a13 - 1;
-		a0 = a0 + 1;
+		a0 = a0 + 1
 	};
 	print_int(if (u1 == u2) then {a0} else {a13})
 }
