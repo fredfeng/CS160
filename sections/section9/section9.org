@@ -1,0 +1,184 @@
+#+title: Section 9
+
+* LLVM-lite
+** Control Flow Graph
++ Essentially a /transition system/. 
++ Your "states" are the code blocks (labeled on the examples using A, B, C, etc)
++ The transitions happen when the /predicate/ (p) is true.
++ input' is some value produces by a code block A (or B, C .. etc) from the input. input'' would be some value produced by the code block from input', etc.
++ p(input') means that, the "predicate" on input returns true
++ \not p (input') means that the "predicate" on input returns false
+  
+*** If-Then-Else
+If then else
+#+begin_src 
+fn foo(input: int) -> int {
+     // setup .. not drawn
+     let inputp = input; 
+     let ret = 0;
+
+
+     // do comparison based on val computed from input
+     if inputp + 5 > 6 then {      // block A - do comparison
+        // block B - when p(input') is true
+         ret = input;
+     } else {
+        // block C - when p(input') is false
+         ret = 49;
+     }
+     // return - block D. 
+     return ret;
+}
+#+end_src
+
+The previous function corresponds to:
+[[file:if-then-else.png]]
+*** While
+#+begin_src 
+fn bar(input: int) -> int {
+     // Setup - undrawn
+     let inputp = input;
+     let ret = 0;
+
+
+
+     // do comparison based on val computed from input
+     while(inputp < 100) {  // block A - do comparison
+        inputp = inputp + 10; // block B
+     }
+     // block C - goto when done
+     return ret;
+}
+
+#+end_src
+[[file:while.png]]
+*** The control-block instructions
+Each "block" is essentially a /state/ and a /transition/.
+#+begin_src ocaml 
+type block = { insns : (uid * insn) list; term : uid * terminator }
+#+end_src
+A CFG is:
+#+begin_src ocaml
+(* Control Flow Graphs: entry and labeled blocks *)
+type cfg = block * (lbl * block) list
+#+end_src
+
+The "state" is a list of instructions that "mutate" the input,
+producing some new value, input''. The /transition/ is the "terminal",
+that takes you *to the next state*. We can then either make a decision
+based on the mutated input, using =Cbr=, or unconditionally go to
+another block. The "terminator" is one of:
+#+begin_src ocaml
+type terminator =
+  | Ret of ty * operand option (* returns. get out of the function *)
+  | Br of lbl (* unconditional branch *)
+  | Cbr of operand * lbl * lbl (* conditional branch based on some operand *)
+#+end_src
+
+It *tells you how to transition*.
+
+** Memory model
+When doing computation, you can't necessarily do everything on the
+/stack/ (which implies purely sequential computation), but you also need
+to be able to *remember* information as well (which is stored in
+memory). When you need to allocate and use memory, use these instructions:
+#+begin_src ocaml
+type insn =
+  | Alloca of ty (* allocates memory - the pointer is the "label" *)
+  | Load of ty * operand (* loads from pointer *)
+  | Store of ty * operand * operand (* stores something at the memory location *)
+#+end_src
+
+Essentially, the "registers" / "locals" are by default *read-only*. If
+you need to do *read* and *write*, then you need to allocate memory. I.e.
+#+begin_src 
+  %1 = icmp sle i64 %n, 0              ; readonly by default
+
+  ;; example of allocating to memory
+  %n_2 = alloca i64
+  store i64 %n, i64* %n_2
+  br label %start_8
+#+end_src
+
+** Anatomy of an llvm instruction
+See the rest of the instructions in =ll.ml=.
+
+Load the interpreter.
+#+begin_src 
+dune utop ./ll
+#+end_src
+
+Do some opens:
+#+begin_src 
+open Ll;;
+open Llutil;;
+#+end_src
+
+Try some to see how LLVM-lite AST compiles to =llvm= instructions for examples:
+#+begin_src 
+Load (Ptr I64, Id "someid") |> show_insn;;
+#+end_src
+
+Here is the list of the "show" functions:
++ =show_insn= - show a single instruction
++ =show_block= - show a "block"
++ =show_cfg= - show a "cfg"
++ =show_prog= - show a program
+
+* Compilation
+** Compilation Context
+When you are compiling to llvm, you need a =Ctxt= which holds a mapping
+of *source identifiers* to *LLVMLite operands*:
+#+begin_src ocaml
+type Ctxt.t = (Ast.id * (Ll.ty * Ll.operand)) list
+#+end_src
+
+In the =Ctxt= module in =compile.ml=, you have access to these functions:
++ =add= - adds binding to context
++ =lookup= - lookup a binding from the context
++ =lookup_function_option= - lookup a function - fail otherwise
++ =show= and =print= - does what you expect.
+
+When you are compiling, *just like how you built the context with
+types*, you need to also build the compilation context with the list of
+"variable bindings" for locals. I think of a context as a "database"
+that allows you to lookup defined variables / functions (which should
+*always* exist b/c you already did type checking).
+
+** Compile expr
++ Obviously, *this is recursive*.
++ The type of this is:
+  #+begin_src ocaml
+let compile_expr : Ctxt.t -> Ast.expr -> Ctxt.t * (Ll.ty * Ll.operand * fragment) = hole ()
+  #+end_src
++ This function takes:
+  + the context, =Ctxt.t=
+  + The ast node: =Ast.expr=
++ And returns a *tuple* of:
+  + a *new* (possibly modified) context =Ctxt.t=
+  + The a code block that *produces a value*: =(Ll.ty * Ll.operand * fragment)=
+    + =Ll.ty= is obviously the *type* of the value
+    + =Ll.operand= is the "operand" that *will receive the value
+    + =fragment= is the code that *produces the value* and sticks it into =operand=.
++ Example (from =fact.pt= ), when compiling
+  #+begin_src 
+n <= 0
+  #+end_src
+the reference patina compiler produces:
+  #+begin_src 
+  %j_4 = alloca i64
+  %1 = load i64, i64* %n_2 ;; %n_2 stores the value of "n"
+  ;; comparison code:
+  %2 = icmp sle i64 %1, 0 ;; do the comparison
+  %3 = zext i1 %2 to i64 ;; zero-extend converts the types 
+  %4 = icmp eq i64 %3, 0 ;; stores the result in %4
+
+  ;; in the if-then-else, we can use the result of the expr by accessing %4
+  #+end_src
++ If you were to do some reverse-engineering, you can prob reproduce
+  exactly how the reference patina compiler compiles this expression
+  relatively easily (b/c no optimizations are done). The above
+  expression would map to the following:
+  #+begin_src 
+  (Ll.I64, (LL.Id tmp4), [ (* code for u to figure out ... *) ]) ;; the frg is %j_4-4
+  #+end_src
