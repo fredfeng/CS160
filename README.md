@@ -19,9 +19,8 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4; no lecture We
 
 | Wk | Date | Topic | Out | Due |
 |---|---|---|---|---|
-| 1 | Thu 9/24 | Section 1: toolchain setup, Python `dataclasses`/`match`, a tour of `ast.parse` | PA0 | |
 | 1 | Mon 9/28 | L1 — Why compilers, why now: anatomy of a compiler; the AI stack is compilers all the way down; "Reflections on Trusting Trust" | | |
-| 1 | Wed 9/30 | L2 — Your first compiler: `ast.parse` → LLVM IR → clang → binary | PA1 | |
+| 1 | Wed 9/30 | L2 — Your first compiler: `ast.parse` → LLVM IR → clang → binary | PA0, PA1 | |
 | 2 | Mon 10/5 | L3 — Variables and control flow: environments, `if`/`while` to basic blocks, SSA vs `alloca` | | PA0 |
 | 2 | Wed 10/7 | L4 — Correctness from day one: interpreter as spec, differential testing, UB and evaluation order | | |
 | 3 | Fri 10/9 | | | **PA1** |
@@ -43,7 +42,6 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4; no lecture We
 | 9 | Wed 11/25 | L15 — Global optimization: DCE, GVN, LICM, inlining; when optimizations are wrong (Alive2) | PA6 | **PA5** |
 | 10 | Mon 11/30 | L16 — Register allocation and memory management: graph coloring, linear scan; GC | | |
 | 10 | Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC | | |
-| Finals | TBA | Optional session — Compilers for AI, AI for compilers (MLIR, tensor compilers, superoptimization, CompCert, Csmith) — and the **Compiler Derby** | | |
 | Finals | Wed 12/9 | | | **PA6** |
 
 There is no final exam.
