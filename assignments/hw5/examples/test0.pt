@@ -1,3 +1,0 @@
-fn main() -> unit {
-    print_int(1 + {let x: int = -1; x})
-}

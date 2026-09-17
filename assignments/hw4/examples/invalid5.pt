@@ -1,7 +1,0 @@
-fn main() -> unit {
-	true;
-	let x : bool = true;
-	let z : int = 879;
-	let y : bool = x || (z && x);
-	()
-}

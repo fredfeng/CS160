@@ -1,3 +1,0 @@
-fn main() -> unit {
-    print_int(if (false||true) then {6} else {-1})
-}

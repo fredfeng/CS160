@@ -1,8 +1,0 @@
-(env
- (dev
-  (flags
-   (:standard -warn-error -A))))
-(tests
- (names test)
- (libraries alcotest section04)
- (modules test))

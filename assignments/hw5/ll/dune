@@ -1,9 +1,0 @@
-(env
- (dev
-  (flags
-   (:standard -warn-error -A))))
-
-(library
- (name ll)
- (wrapped false)
- (modules ll llutil))

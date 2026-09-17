@@ -1,9 +1,0 @@
-(env
- (dev
-  (flags
-   (:standard -warn-error -A))))
-   
-(library
- (name section04)
- (public_name section04)
- (modules section04))

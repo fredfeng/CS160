@@ -1,68 +1,87 @@
-# CS160 Compilers
+# CS160 Compilers — Fall 2026
 
-The goal of this course is to give an introduction to compiler, a computer program that translate source code from a high-level programming language to a lower level language to create an executable program.
-Through this course, you will learn to build a compiler from scratch.
+Compilers are the trust boundary between code and the machine — and in an era when much of the code you ship will be written by a model, the compiler is the layer that checks it, makes it fast, and tells you when it is wrong. In this course you will build a complete compiler in Python for **Cocoa**, a statically typed subset of Python, targeting real x86-64 through LLVM. By week 1 your compiler runs programs natively; every week after that it learns something new.
 
-The workloads include 5 programming assignments.
+The course is built around one compiler grown across six programming assignments, three in-class midterms, and a worksheet in every lecture. See the full design rationale in [docs/CS160-Fall2026-Outline.md](docs/CS160-Fall2026-Outline.md). Materials from the previous offering are on the [`spring-2023`](https://github.com/fredfeng/CS160/tree/spring-2023) branch.
 
-# Office hour
-Instructor: Yu Feng (yufeng@UCSBCS)
+## Logistics
 
-TA: Junrui Liu (junrui@ucsb), Jingtao Xia (jingtaoxia@ucsb.edu), Thanawat Techaumnuaiwit (thanawat@uscb.edu)
+- **Instructor:** Yu Feng (yufeng@cs.ucsb.edu)
+- **TAs:** TBA
+- **Lecture:** Mon & Wed, time/room TBA
+- **Sections:** Thu, TBA
+- **Office hours:** TBA
+- **Slack:** TBA
 
-Class: Mon & Wed, 2-3pm, HSSB 1174
+## Schedule
 
-Sections:
-- Thur 3-4pm (ILP 4209) 
-- 4-5pm (ILP 4209) 
-- 5-6pm (ILP 2207)
+Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4; no lecture Wed 11/11, Veterans Day). Every lecture has an in-class worksheet. Lectures are not recorded.
 
-Instructor's office hour: Wed, 3-4pm, HFH 2157
+| Wk | Date | Topic | Out | Due |
+|---|---|---|---|---|
+| 1 | Thu 9/24 | Section 1: toolchain setup, Python `dataclasses`/`match`, a tour of `ast.parse` | PA0 | |
+| 1 | Mon 9/28 | L1 — Why compilers, why now: anatomy of a compiler; the AI stack is compilers all the way down; "Reflections on Trusting Trust" | | |
+| 1 | Wed 9/30 | L2 — Your first compiler: `ast.parse` → LLVM IR → clang → binary | PA1 | |
+| 2 | Mon 10/5 | L3 — Variables and control flow: environments, `if`/`while` to basic blocks, SSA vs `alloca` | | PA0 |
+| 2 | Wed 10/7 | L4 — Correctness from day one: interpreter as spec, differential testing, UB and evaluation order | | |
+| 3 | Fri 10/9 | | | **PA1** |
+| 3 | Mon 10/12 | L5 — Lexing: regex → NFA → DFA; longest match; indentation-sensitive lexing | PA2 | |
+| 3 | Wed 10/14 | L6 — Parsing I: CFGs, ambiguity, precedence; recursive descent; Pratt parsing | | |
+| 4 | Mon 10/19 | L7 — Parsing II: LL(1), FIRST/FOLLOW; LR(0)/SLR/LR(1); parser generators; error recovery | PA3 | **PA2** |
+| 4 | Wed 10/21 | **Midterm 1** (in class): pipeline, LLVM IR, lexing, parsing | | |
+| 5 | Mon 10/26 | L8 — Functions and the machine: stack frames, System V calling convention, tail calls | | |
+| 5 | Wed 10/28 | L9 — Semantic analysis I: symbol tables, scope, typing rules as inference rules | | |
+| 5 | Fri 10/30 | | | **PA3** |
+| 6 | Mon 11/2 | L10 — Semantic analysis II: soundness, operational semantics, progress and preservation | PA4 | |
+| 6 | Wed 11/4 | L11 — Runtime organization: heap vs stack, object layout, `getelementptr`, bounds checks, `None` | | |
+| 7 | Mon 11/9 | **Midterm 2** (in class): calling conventions, type systems, semantics, runtime layout | | |
+| 7 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) | | |
+| 7 | Fri 11/13 | | | **PA4** |
+| 8 | Mon 11/16 | L12 — Closures and objects: free variables, closure conversion, lambda lifting, dispatch | PA5 | |
+| 8 | Wed 11/18 | L13 — IRs and SSA: CFGs, dominators, dominance frontiers, SSA construction | | |
+| 9 | Mon 11/23 | L14 — Dataflow analysis: lattices, transfer functions, fixpoints; liveness, constant propagation | | |
+| 9 | Wed 11/25 | L15 — Global optimization: DCE, GVN, LICM, inlining; when optimizations are wrong (Alive2) | PA6 | **PA5** |
+| 10 | Mon 11/30 | L16 — Register allocation and memory management: graph coloring, linear scan; GC | | |
+| 10 | Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC | | |
+| Finals | TBA | Optional session — Compilers for AI, AI for compilers (MLIR, tensor compilers, superoptimization, CompCert, Csmith) — and the **Compiler Derby** | | |
+| Finals | Wed 12/9 | | | **PA6** |
 
-TA's office hour:
-- Jingtao Xia: Tue 11am-12pm (Phelps 3523)
-- Junrui Liu: Thur 11am-12pm (Phelps 3523)
-- Thanawat Techaumnuaiwit: Fri 1-2pm (**CSIL**)
+There is no final exam.
 
-Slack: https://join.slack.com/t/cs160-spring23/shared_invite/zt-1sdvkrlh1-goq7CANHgzKNCgAWr3a4Sg
+## Programming assignments
 
+You will build one compiler, in Python, from Cocoa source to textual LLVM IR compiled by `clang`. Each assignment extends the previous one.
 
-| Date  | Topic                                         | Slides | Read | Out | Due |
-|-------|-----------------------------------------------|--------|------|-----|-----|
-| 4/3  | Welcome & Course Overview                                  |  [lec1](lectures/lecture1.pdf)     |      |     |     |
-| 4/5  | OCaml Crash Course, Part I                                  |  [lec2](lectures/lecture2.pdf)      |      |     |     |
-| 4/10  | OCaml Crash Course, Part II          |  [lec3](lectures/lecture3.pdf)      |     |  [hw1](./assignments/hw1/)    |    |
-| 4/12  | OCaml Crash Course, Part III             |  [lec4](lectures/lecture4.pdf)       |     |  |     |
-| 4/17  | Lexical Analysis                |  [lec5](lectures/lecture5.pdf)     |      |     |     |
-| 4/19 | Regular Expressions and FSM                           |  [lec6](lectures/lecture6.pdf)     |      |   |     |
-| 4/24 | Revisiting DFA and NFA                            |  [lec7](lectures/lecture7.pdf)      |      |       |  hw1  |
-| 4/26 | Introduction to parsing                          |  [lec8](lectures/lecture8.pdf)      |      | [hw2](./assignments/hw2/)  |    |
-| 5/1 | More about parsing | [lec9](lectures/lecture9.pdf)    |     |     |   |
-| 5/3 |     Parsing Algorithms    | [lec10](lectures/lecture10.pdf)        |      |    |    |
-| 5/8 | - | | | | hw2 (tentative) |
-| 5/10 |    Type System and Soundness       | [lec11](lectures/fv-intro.pdf)        |      |    |  |
-| 5/15 | Type Checking I   |  [lec12](lectures/lecture12.pdf)        |      |  [hw3](./assignments/hw3/)   |    |
-| 5/17 |  Type Checking II                     |  [lec13](https://github.com/fredfeng/CS160/blob/fall-2021/assignments/as3/types/type.pdf)       |      |     |    |
-| 5/22  |  Code Generation  I  | [lec14](lectures/lecture14-2.pdf) |      | hw4 (tentative) |  hw3   |
-| 5/24  | TBD |        |      |    |     |
-| 5/29  | Code Generation II |  [lec14](lectures/lecture14.pdf)      |      |   hw5 (tentative)   |   hw4 |
-| 5/31 | Optimization I                       |   [lec15](lectures/lecture15.pdf)       |       |     |     |
-| 6/5 | Optimization II                |        |     |      |   |
-| 6/7 | Optimization III        |         |      |     |    |
-| TBD  | Final week, no class                                 |        |      |     |    |
-| 6/12 | - | | | |  hw5 (tentative) |
+| PA | Adds to your compiler | Due |
+|---|---|---|
+| PA0 | Toolchain setup; run the staff "hello" pipeline (checkoff in section) | 10/5 |
+| PA1 | Ints, bools, arithmetic, comparisons, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
+| PA2 | Your own lexer (INDENT/DEDENT) and parser, agreeing with `ast.parse` on the staff corpus | 10/19 |
+| PA3 | Functions, recursion, and a type checker implemented from the Cocoa typing rules | 10/30 |
+| PA4 | Lists and strings on the heap, bounds checks, `None`-safety; hidden differential tests | 11/13 |
+| PA5 | A CFG-based IR, SSA construction, local optimizations | 11/25 |
+| PA6 | A global dataflow-based optimization and the performance leaderboard | 12/9 |
 
+Assignment handouts will appear under `assignments/` as they are released.
 
-# Grading
+## Grading
 
-1. Programming assignments: 80%
-    1. 5 programming assignments, 16% each
+| Component | Weight |
+|---|---|
+| Three in-class midterms | 60% (20% each) |
+| Six programming assignments | 30% (5% each) |
+| In-class worksheets | 10% |
+| Extra credit: top-5 Slack participants | +2% |
 
-2. Take-home midterm: 20%
+**Exams.** There will be three closed-book, pencil-and-paper midterm exams, each worth 20% of the grade, held during lecture on Wednesday October 21, Monday November 9, and Wednesday December 2. There is no final exam.
 
-  
+**Cheat sheet.** You may bring a "cheat sheet" comprising a single letter-sized sheet of paper (you can use both sides if you wish).
 
-Below is a grading system used by CS160 (No curving).
+**Worksheets.** We will have "in class" worksheets (10%) handed out in each lecture and which are to be turned in at the end of the lecture. Turn in 75% of the worksheets to get full credit. Responses will be graded on participation (not correctness).
+
+**Extra credit (2%)** for the top-5 best participants in Slack discussions, determined by the instruction team.
+
+Letter grades (no curving):
 
 | Letter | Percentage |
 |--------|------------|
@@ -76,43 +95,29 @@ Below is a grading system used by CS160 (No curving).
 | C      | 60–64%     |
 | F      | <60%       |
 
-Credit: https://en.wikipedia.org/wiki/Academic_grading_in_the_United_States
+## Policies
 
+1. We will not be podcasting lectures.
+2. We will have worksheets to be filled in and submitted in every lecture.
+3. We have a no-screens policy: students must keep their devices off during lectures. If you have a DSP accommodation that requires a device, please see the instructor in the first week.
+4. We require all exams be taken on the announced dates and times (see Grading). There are no makeups or alternate sittings except for documented emergencies handled through the university's process; plan travel and interviews around these dates now.
 
-# Useful resources
+## Integrity of Scholarship
 
-You will find the [Patina materials](https://junrui-liu.github.io/patina) very helpful during
-this course.
+University rules on integrity of scholarship will be strictly enforced. By taking this course, you implicitly agree to abide by the [UCSB Academic Integrity policy](https://studentconduct.sa.ucsb.edu/academic-integrity). In particular, all academic work will be done by the student to whom it is assigned, without unauthorized aid of any kind.
 
-Textbook (Optional): Cooper, Keith, and Linda Torczon. Engineering a compiler.
+You are expected to do your own work on all assignments. You may, and are encouraged to, engage in general discussions with your classmates regarding the assignments, but specific details of a solution, including the solution itself, must always be your own work.
 
-These resources are helpful for learning OCaml:
+You may use Copilot/ChatGPT/Claude etc. for your programming assignments, but do so at your own risk: the three midterms will be heavily based on the assignments, and doing well in them will require a thorough understanding of the solutions to the programming assignments. These exams will be entirely analog: no tools other than your brain, your cheat sheet, and a writing instrument are to be used.
 
-1. [OCaml From the Ground Up](https://ocamlbook.org/): this is a good
-   step-by-step introduction to OCaml.
-2. [Real World OCaml](https://dev.realworldocaml.org/guided-tour.html): a
-   comprehensive guide on OCaml: how to use it, the ecosystem and tooling, and
-   common libraries.
-3. [The OCaml system](https://ocaml.org/releases/4.11/htmlman/index.html): the
-   official user manual for OCaml. Part I is helpful for seeing examples of what
-   OCaml has to offer. You may also want to look at Part III, Chapter 17 for
-   information on how to use the debugger.
-4. [OCaml official documentation](https://ocaml.org/learn/)
-5. [Learning OCaml in Y mins](https://learnxinyminutes.com/docs/ocaml/)
+Submitting, sharing, or publishing staff solutions or solutions from previous quarters is prohibited, as is leaving your own solution visible to others (e.g., in a public repository).
 
+Incidents which violate the University's rules on integrity of scholarship will be taken seriously. In addition to receiving a zero (0) on the assignment/exam in question, students may also face other penalties, up to and including expulsion from the University. Should you have any doubts about the moral and/or ethical implications of an activity regarding the course, please see the instructor.
 
-# Academic Integrity
-- Cheating WILL be taken seriously. It is not fair toward honest students to take cheating lightly, nor is it fair to the cheater to let him/her go on thinking that cheating is a reasonable alternative in life.
-- The following is not considered cheating:
-   - discussing broad ideas about programming assignments in groups, without being at a computer (with code-writing and debugging done individually, later).
-- The following is considered cheating:
-   - discussing programming assignments with someone who has already completed the problem, or looking at their completed solution.
-   - looking at anyone else’s solution
-   - Previous versions of the class.
-   - leaving your code (for example in an online repository) visible to others, leading others to look at your solution.
-   - receiving, providing, or soliciting assistance from unauthorized sources during a test.
-- Programming assignments are not intended to be grade-makers, but to prepare you for the tests, which are the grade-makers. Cheating on the programming assignment is not only unethical, but shows a fundamental misunderstanding of the purpose of these assignments.
-- Penalties: First time: a zero for the assignment; Second time: an “F” in the course.
+## Resources
 
-
-
+- Jeremy Siek, *Essentials of Compilation: An Incremental Approach in Python* (MIT Press, 2023) — recommended; free online at the [book's site](https://github.com/IUCompilerCourse/Essentials-of-Compilation).
+- Cooper & Torczon, *Engineering a Compiler* (optional).
+- [ChocoPy language reference](https://chocopy.org/) — Cocoa's typing rules and operational semantics are drawn from it; the exact Cocoa subset is specified in `cocoa/SPEC.md` (coming soon).
+- [LLVM Language Reference](https://llvm.org/docs/LangRef.html).
+- Ghuloum, [An Incremental Approach to Compiler Construction](http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf) (2006) — the design philosophy of this course.
