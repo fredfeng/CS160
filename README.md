@@ -19,24 +19,24 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 
 | Date | Topic | Reading (EaC 3e) | Out | Due |
 |---|---|---|---|---|
-| Mon 9/28 | L1 — Why compilers, why now: anatomy of a compiler; the AI stack is compilers all the way down; "Reflections on Trusting Trust" | Ch. 1 | | |
-| Wed 9/30 | L2 — Your first compiler: `ast.parse` → LLVM IR → clang → binary | Ch. 4.1–4.3, 4.6 | PA1 | |
-| Mon 10/5 | L3 — Variables and control flow: environments, `if`/`while` to basic blocks, SSA vs `alloca` | Ch. 7.1–7.4 | | |
-| Wed 10/7 | L4 — Correctness from day one: interpreter as spec, differential testing, UB and evaluation order | — | | |
+| Mon 9/28 | L1 — The big picture: what a compiler is, the stages of the pipeline (the map we follow all quarter), why it matters when much of your code will be written by a model | Ch. 1 | | |
+| Wed 9/30 | L2 — Your first compiler: `ast.parse` → LLVM IR → clang → binary; LLVM IR as typed three-address code with labels | Ch. 4.1–4.3 | PA1 | |
+| Mon 10/5 | L3 — Variables and control flow: environments, `alloca`/`load`/`store`, compiling `if`/`while` to labels and jumps | Ch. 7.1–7.4 | | |
+| Wed 10/7 | L4 — Testing your compiler: the reference interpreter as the answer key, differential testing, writing tests that catch your own bugs | — | | |
 | Fri 10/9 | | | | **PA1** |
 | Mon 10/12 | L5 — Lexing: regex → NFA → DFA; longest match; indentation-sensitive lexing | Ch. 2 | PA2 | |
 | Wed 10/14 | L6 — Parsing I: CFGs, ambiguity, precedence; recursive descent; Pratt parsing | Ch. 3.1–3.3 | | |
 | Mon 10/19 | L7 — Parsing II: LL(1), FIRST/FOLLOW; LR(0)/SLR/LR(1); parser generators; error recovery | Ch. 3.3–3.5 | PA3 | **PA2** |
-| Wed 10/21 | **Midterm 1** (in class): pipeline, LLVM IR, lexing, parsing | | | |
+| Wed 10/21 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, lexing, parsing | | | |
 | Mon 10/26 | L8 — Functions and the machine: stack frames, System V calling convention, tail calls | Ch. 6.1–6.5 | | |
 | Wed 10/28 | L9 — Semantic analysis I: symbol tables, scope, typing rules as inference rules | Ch. 4.5, 5.1–5.4 | | |
 | Fri 10/30 | | | | **PA3** |
-| Mon 11/2 | L10 — Semantic analysis II: soundness, operational semantics, progress and preservation | Ch. 5.4–5.5 | PA4 | |
+| Mon 11/2 | L10 — Semantic analysis II: operational semantics, soundness; evaluation order and undefined behavior | Ch. 5.4–5.5 | PA4 | |
 | Wed 11/4 | L11 — Runtime organization: heap vs stack, object layout, `getelementptr`, bounds checks, `None`; closures in brief | Ch. 6.6, 7.5–7.6 | | |
 | Mon 11/9 | **Midterm 2** (in class): calling conventions, type systems, semantics, runtime layout | | | |
 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) | | | |
 | Fri 11/13 | | | | **PA4** |
-| Mon 11/16 | L12 — IRs and SSA: CFGs, dominators, dominance frontiers, SSA construction | Ch. 4.4, 9.3 | PA5 | |
+| Mon 11/16 | L12 — IRs and SSA: CFGs, dominators, dominance frontiers, SSA construction; what `mem2reg` was doing to your `alloca`s | Ch. 4.4, 4.6, 9.3 | PA5 | |
 | Wed 11/18 | L13 — Dataflow analysis: lattices, transfer functions, fixpoints; liveness, constant propagation | Ch. 8.1–8.4, 9.1–9.2 | | |
 | Mon 11/23 | L14 — Global optimization: DCE, GVN, LICM, inlining; when optimizations are wrong (Alive2) | Ch. 8.5–8.7, 10 | PA6 | |
 | Tue 11/24 | | | | **PA5** |
