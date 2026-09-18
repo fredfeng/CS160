@@ -2,7 +2,7 @@
 
 Compilers are the trust boundary between code and the machine — and in an era when much of the code you ship will be written by a model, the compiler is the layer that checks it, makes it fast, and tells you when it is wrong. In this course you will build a complete compiler in Python for **Cocoa**, a statically typed subset of Python, targeting real x86-64 through LLVM. By week 1 your compiler runs programs natively; every week after that it learns something new.
 
-The course is built around one compiler grown across six programming assignments, three in-class midterms, and a worksheet in every lecture. See the full design rationale in [docs/CS160-Fall2026-Outline.md](docs/CS160-Fall2026-Outline.md). Materials from the previous offering are on the [`spring-2023`](https://github.com/fredfeng/CS160/tree/spring-2023) branch.
+The course is built around one compiler grown across six programming assignments, three in-class midterms, and a worksheet in every lecture. Materials from the previous offering are on the [`spring-2023`](https://github.com/fredfeng/CS160/tree/spring-2023) branch.
 
 ## Logistics
 
