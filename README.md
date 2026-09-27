@@ -7,10 +7,12 @@ The course is built around one compiler grown across six programming assignments
 ## Logistics
 
 - **Instructor:** Yu Feng (yufeng@cs.ucsb.edu)
-- **TAs:** TBA
+- **TAs:** Hanzhi Liu (hanzhi@ucsb.edu)
 - **Lecture:** Mon & Wed, time/room TBA
-- **Sections:** Thu, TBA
-- **Office hours:** TBA
+- **Sections:** 
+  - (Hanzhi Liu) Thu, 11:00am - 11:50am, BRDA 1640
+- **Office hours:** 
+  - (Hanzhi Liu) Wed, 11:00am - 11:50am, HFH 2152A
 - **Slack:** TBA
 
 ## Schedule
