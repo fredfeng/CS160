@@ -26,15 +26,14 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Wed 9/30 | Your first compiler | Ch. 4.1–4.3 | PA1 | |
 | Mon 10/5 | Variables and control flow | Ch. 7.1–7.4 | | |
 | Wed 10/7 | Testing your compiler | — | | |
-| Fri 10/9 | | | | **PA1** |
-| Mon 10/12 | Lexing | Ch. 2 | PA2 | |
+| Fri 10/9 | | | PA2 | **PA1** |
+| Mon 10/12 | Lexing | Ch. 2 | | |
 | Wed 10/14 | Parsing I | Ch. 3.1–3.3 | | |
 | Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent | | | |
 | Wed 10/21 | Parsing II | Ch. 3.3–3.5 | PA3 | **PA2** |
 | Mon 10/26 | Functions and the machine | Ch. 6.1–6.5 | | |
 | Wed 10/28 | Semantic analysis I | Ch. 4.5, 5.1–5.4 | | |
-| Fri 10/30 | | | | **PA3** |
-| Mon 11/2 | Semantic analysis II | Ch. 5.4–5.5 | PA4 | |
+| Mon 11/2 | Semantic analysis II | Ch. 5.4–5.5 | PA4 | **PA3** |
 | Wed 11/4 | Runtime organization | Ch. 6.6, 7.5–7.6 | | |
 | Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout | | | |
 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) | | | |
@@ -54,14 +53,14 @@ There is no final exam.
 
 You will build one compiler, in Python, from ChocoPy source to textual LLVM IR compiled by `clang`. Each assignment extends the previous one.
 
-| PA | Adds to your compiler | Due |
-|---|---|---|
-| PA1 | Ints, bools, arithmetic, comparisons, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
-| PA2 | Your own lexer (INDENT/DEDENT) and parser, agreeing with `ast.parse` on the staff corpus | 10/21 |
-| PA3 | Functions, recursion, and a type checker implemented from the ChocoPy typing rules | 10/30 |
-| PA4 | Lists and strings on the heap, bounds checks, `None`-safety; hidden differential tests | 11/13 |
-| PA5 | A CFG-based IR, SSA construction, local optimizations | 11/24 |
-| PA6 | A global dataflow-based optimization and the performance leaderboard | 12/9 |
+| PA | Title | Adds to your compiler | Due |
+|---|---|---|---|
+| PA1 | **Compiling Expressions, Variables and Loops to LLVM IR**<br>*Where does each value go?* | Ints and bools, arithmetic with Python's `//` and `%`, comparisons, `and`/`or`/`not`, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
+| PA2 | **Your Own Lexer and Parser**<br>*How does text become a tree?* | A lexer with INDENT/DEDENT and a recursive-descent parser whose trees match `ast.parse` on the staff corpus | 10/21 |
+| PA3 | **Functions, Recursion and a Type Checker**<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/2 |
+| PA4 | **Lists and Strings on the Heap**<br>*Where does a value live?* | Heap objects built with `getelementptr`, bounds checks, `None`-safety, `for` loops; hidden differential tests | 11/13 |
+| PA5 | **SSA Construction and Local Optimization**<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/24 |
+| PA6 | **Global Constant Propagation and Dead-Code Elimination**<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; the performance leaderboard | 12/9 |
 
 Assignment handouts will appear under `assignments/` as they are released.
 
