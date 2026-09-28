@@ -29,14 +29,14 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Fri 10/9 | | | | **PA1** |
 | Mon 10/12 | Lexing | Ch. 2 | PA2 | |
 | Wed 10/14 | Parsing I | Ch. 3.1–3.3 | | |
-| Mon 10/19 | Parsing II | Ch. 3.3–3.5 | PA3 | **PA2** |
-| Wed 10/21 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, lexing, parsing | | | |
+| Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent | | | |
+| Wed 10/21 | Parsing II | Ch. 3.3–3.5 | PA3 | **PA2** |
 | Mon 10/26 | Functions and the machine | Ch. 6.1–6.5 | | |
 | Wed 10/28 | Semantic analysis I | Ch. 4.5, 5.1–5.4 | | |
 | Fri 10/30 | | | | **PA3** |
 | Mon 11/2 | Semantic analysis II | Ch. 5.4–5.5 | PA4 | |
 | Wed 11/4 | Runtime organization | Ch. 6.6, 7.5–7.6 | | |
-| Mon 11/9 | **Midterm 2** (in class): calling conventions, type systems, semantics, runtime layout | | | |
+| Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout | | | |
 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) | | | |
 | Fri 11/13 | | | | **PA4** |
 | Mon 11/16 | IRs and SSA | Ch. 4.4, 4.6, 9.3 | PA5 | |
@@ -57,7 +57,7 @@ You will build one compiler, in Python, from ChocoPy source to textual LLVM IR c
 | PA | Adds to your compiler | Due |
 |---|---|---|
 | PA1 | Ints, bools, arithmetic, comparisons, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
-| PA2 | Your own lexer (INDENT/DEDENT) and parser, agreeing with `ast.parse` on the staff corpus | 10/19 |
+| PA2 | Your own lexer (INDENT/DEDENT) and parser, agreeing with `ast.parse` on the staff corpus | 10/21 |
 | PA3 | Functions, recursion, and a type checker implemented from the ChocoPy typing rules | 10/30 |
 | PA4 | Lists and strings on the heap, bounds checks, `None`-safety; hidden differential tests | 11/13 |
 | PA5 | A CFG-based IR, SSA construction, local optimizations | 11/24 |
@@ -74,7 +74,7 @@ Assignment handouts will appear under `assignments/` as they are released.
 | In-class worksheets | 10% |
 | Extra credit: top-5 Slack participants | +2% |
 
-**Exams.** There will be three closed-book, pencil-and-paper midterm exams, each worth 20% of the grade, held during lecture on Wednesday October 21, Monday November 9, and Wednesday December 2. There is no final exam.
+**Exams.** There will be three closed-book, pencil-and-paper midterm exams, each worth 20% of the grade, held during lecture on Monday October 19, Monday November 9, and Wednesday December 2. There is no final exam.
 
 **Cheat sheet.** You may bring a "cheat sheet" comprising a single letter-sized sheet of paper (you can use both sides if you wish).
 
