@@ -8,16 +8,12 @@ The course is built around one compiler grown across six programming assignments
 
 - **Instructor:** Yu Feng (yufeng@cs.ucsb.edu)
 - **TAs:** Hanzhi Liu (hanzhi@ucsb.edu)
-- **Lecture:** Mon & Wed, time/room TBA
+- **Lecture:** Mon & Wed, 12:30pm - 1:45pm, Buchanan Hall 1930
+- **Instructor's Office hours:** — Mon 11am–noon, HFH 2157.
 - **Sections:** 
   - (Hanzhi Liu) Thu, 11:00am - 11:50am, BRDA 1640
 - **Office hours:** 
   - (Hanzhi Liu) Wed, 11:00am - 11:50am, HFH 2152A
-- **Slack:** TBA
-- **TA:** Hanzhi Liu (hanzhi@ucsb.edu)
-- **Lecture:** Mon & Wed, time/room TBA
-- **Sections:** Thu, TBA
-- **Office hours:** Yu Feng — Mon 11am–noon, HFH 2157. TA — TBA
 - **Slack:** [join here](https://join.slack.com/t/cs160-fall26/shared_invite/zt-4akvdvxrn-Stkjknk0Oq~7zuczYzt2nQ)
 
 ## Schedule
