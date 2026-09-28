@@ -2,11 +2,12 @@
 
 Compilers are the trust boundary between code and the machine — and in an era when much of the code you ship will be written by a model, the compiler is the layer that checks it, makes it fast, and tells you when it is wrong. In this course you will build a complete compiler in Python for **Cocoa**, a statically typed subset of Python, targeting real x86-64 through LLVM. By week 1 your compiler runs programs natively; every week after that it learns something new.
 
-The course is built around one compiler grown across six programming assignments, three in-class midterms, and a worksheet in every lecture. Materials from the previous offering are on the [`spring-2023`](https://github.com/fredfeng/CS160/tree/spring-2023) branch.
+The course is built around one compiler grown across six programming assignments, three in-class midterms, and a worksheet in every lecture after the first. Materials from the previous offering are on the [`spring-2023`](https://github.com/fredfeng/CS160/tree/spring-2023) branch.
 
 ## Logistics
 
 - **Instructor:** Yu Feng (yufeng@cs.ucsb.edu)
+<<<<<<< HEAD
 - **TAs:** Hanzhi Liu (hanzhi@ucsb.edu)
 - **Lecture:** Mon & Wed, time/room TBA
 - **Sections:** 
@@ -14,10 +15,17 @@ The course is built around one compiler grown across six programming assignments
 - **Office hours:** 
   - (Hanzhi Liu) Wed, 11:00am - 11:50am, HFH 2152A
 - **Slack:** TBA
+=======
+- **TA:** Hanzhi Liu (hanzhi@ucsb.edu)
+- **Lecture:** Mon & Wed, time/room TBA
+- **Sections:** Thu, TBA
+- **Office hours:** Yu Feng — Mon 11am–noon, HFH 2157. TA — TBA
+- **Slack:** [join here](https://join.slack.com/t/cs160-fall26/shared_invite/zt-4akvdvxrn-Stkjknk0Oq~7zuczYzt2nQ)
+>>>>>>> a627b83 (Logistics: OH, TA, Slack invite; no worksheet in lecture 1)
 
 ## Schedule
 
-Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture on Wed 11/11 (Veterans Day) or Wed 11/25 (Thanksgiving week). Every lecture has an in-class worksheet. Lectures are not recorded. Reading refers to chapters of Cooper & Torczon, *Engineering a Compiler*, 3rd ed. (EaC); lectures marked — have no textbook counterpart.
+Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture on Wed 11/11 (Veterans Day) or Wed 11/25 (Thanksgiving week). Every lecture from the second onward has an in-class worksheet. Lectures are not recorded. Reading refers to chapters of Cooper & Torczon, *Engineering a Compiler*, 3rd ed. (EaC); lectures marked — have no textbook counterpart.
 
 | Date | Topic | Reading (EaC 3e) | Out | Due |
 |---|---|---|---|---|
@@ -77,7 +85,7 @@ Assignment handouts will appear under `assignments/` as they are released.
 
 **Cheat sheet.** You may bring a "cheat sheet" comprising a single letter-sized sheet of paper (you can use both sides if you wish).
 
-**Worksheets.** We will have "in class" worksheets (10%) handed out in each lecture and which are to be turned in at the end of the lecture. Turn in 75% of the worksheets to get full credit. Responses will be graded on participation (not correctness).
+**Worksheets.** We will have "in class" worksheets (10%) handed out in each lecture (except the first) and which are to be turned in at the end of the lecture. Turn in 75% of the worksheets to get full credit. Responses will be graded on participation (not correctness).
 
 **Extra credit (2%)** for the top-5 best participants in Slack discussions, determined by the instruction team.
 
@@ -98,7 +106,7 @@ Letter grades (no curving):
 ## Policies
 
 1. We will not be podcasting lectures.
-2. We will have worksheets to be filled in and submitted in every lecture.
+2. We will have worksheets to be filled in and submitted in every lecture after the first.
 3. We have a no-screens policy: students must keep their devices off during lectures. If you have a DSP accommodation that requires a device, please see the instructor in the first week.
 4. We require all exams be taken on the announced dates and times (see Grading). There are no makeups or alternate sittings except for documented emergencies handled through the university's process; plan travel and interviews around these dates now.
 
