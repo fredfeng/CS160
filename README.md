@@ -20,32 +20,32 @@ The course is built around one compiler grown across six programming assignments
 
 Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture on Wed 11/11 (Veterans Day) or Wed 11/25 (Thanksgiving week). Every lecture from the second onward has an in-class worksheet, handed out electronically during lecture. Lectures are not recorded. Reading refers to chapters of Cooper & Torczon, *Engineering a Compiler*, 3rd ed. (EaC); lectures marked — have no textbook counterpart.
 
-| Date | Topic | Reading (EaC 3e) | Out | Due |
-|---|---|---|---|---|
-| Mon 9/28 | The big picture | Ch. 1 | | |
-| Wed 9/30 | Your first compiler | Ch. 4.1–4.3 | PA1 | |
-| Mon 10/5 | Variables and control flow | Ch. 7.1–7.4 | | |
-| Wed 10/7 | Testing your compiler | — | | |
-| Fri 10/9 | | | PA2 | **PA1** |
-| Mon 10/12 | Lexing | Ch. 2 | | |
-| Wed 10/14 | Parsing I | Ch. 3.1–3.3 | | |
-| Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent | | | |
-| Wed 10/21 | Parsing II | Ch. 3.3–3.5 | PA3 | **PA2** |
-| Mon 10/26 | Functions and the machine | Ch. 6.1–6.5 | | |
-| Wed 10/28 | Semantic analysis I | Ch. 4.5, 5.1–5.4 | | |
-| Mon 11/2 | Semantic analysis II | Ch. 5.4–5.5 | PA4 | **PA3** |
-| Wed 11/4 | Runtime organization | Ch. 6.6, 7.5–7.6 | | |
-| Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout | | | |
-| Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) | | | |
-| Fri 11/13 | | | | **PA4** |
-| Mon 11/16 | IRs and SSA | Ch. 4.4, 4.6, 9.3 | PA5 | |
-| Wed 11/18 | Dataflow analysis | Ch. 8.1–8.4, 9.1–9.2 | | |
-| Mon 11/23 | Global optimization | Ch. 8.5–8.7, 10 | PA6 | |
-| Tue 11/24 | | | | **PA5** |
-| Wed 11/25 | *No lecture (Thanksgiving week)* | | | |
-| Mon 11/30 | Register allocation and memory management | Ch. 13, 6.6 | | |
-| Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC | | | |
-| Wed 12/9 | | | | **PA6** |
+| Date | Topic | Slides | Reading (EaC 3e) | Out | Due |
+|---|---|---|---|---|---|
+| Mon 9/28 | The big picture | [pdf](lectures/lecture1.pdf) | Ch. 1 | | |
+| Wed 9/30 | Your first compiler |  | Ch. 4.1–4.3 | PA1 | |
+| Mon 10/5 | Variables and control flow |  | Ch. 7.1–7.4 | | |
+| Wed 10/7 | Testing your compiler |  | — | | |
+| Fri 10/9 | | |  | PA2 | **PA1** |
+| Mon 10/12 | Lexing |  | Ch. 2 | | |
+| Wed 10/14 | Parsing I |  | Ch. 3.1–3.3 | | |
+| Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent |  | | | |
+| Wed 10/21 | Parsing II |  | Ch. 3.3–3.5 | PA3 | **PA2** |
+| Mon 10/26 | Functions and the machine |  | Ch. 6.1–6.5 | | |
+| Wed 10/28 | Semantic analysis I |  | Ch. 4.5, 5.1–5.4 | | |
+| Mon 11/2 | Semantic analysis II |  | Ch. 5.4–5.5 | PA4 | **PA3** |
+| Wed 11/4 | Runtime organization |  | Ch. 6.6, 7.5–7.6 | | |
+| Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout |  | | | |
+| Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) |  | | | |
+| Fri 11/13 | | |  | | **PA4** |
+| Mon 11/16 | IRs and SSA |  | Ch. 4.4, 4.6, 9.3 | PA5 | |
+| Wed 11/18 | Dataflow analysis |  | Ch. 8.1–8.4, 9.1–9.2 | | |
+| Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | PA6 | |
+| Tue 11/24 | | |  | | **PA5** |
+| Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
+| Mon 11/30 | Register allocation and memory management |  | Ch. 13, 6.6 | | |
+| Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC |  | | | |
+| Wed 12/9 | | |  | | **PA6** |
 
 There is no final exam.
 
