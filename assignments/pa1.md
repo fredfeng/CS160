@@ -4,7 +4,7 @@
 
 **Due: Friday, October 9, 11:59 pm (Pacific).** Released Wednesday, September 30.
 
-**What to do:** complete **Exercises 1 to 4** in `compiler/codegen.py`, and write **three tests** of your own. If you use an AI coding assistant, hand in its sessions; if you do not, describe your design in `docs/pa1-design.md`. Section 8 says how to hand them in.
+**What to do:** complete **Exercises 1 to 4** in `compiler/codegen.py`, and write **three tests** of your own. Hand in your AI sessions, a design document in `docs/pa1-design.md`, or both. Section 8 says how to hand them in.
 
 **Lectures:** Your first compiler (9/30), Variables and control flow (10/5), Testing your compiler (10/7).
 
@@ -36,7 +36,7 @@ oneworld assessment join <PA1 invite code>                                 # ste
 | File | What it is |
 |---|---|
 | `test/mine/pa1/` | your own test programs |
-| `docs/pa1-design.md` | a short description of your design, if you do not use AI |
+| `docs/pa1-design.md` | a short description of your design, if you hand one in |
 | `compiler/emit.py` | helpers for writing IR (Section 3.3) |
 | `runtime/runtime.c` | C functions your IR calls, for example to print a number |
 | `test/pa1/` | 35 test programs |
@@ -578,7 +578,7 @@ Hand in these three things:
 
 - **Your code**, with Exercises 1 to 4 done.
 - **Three tests of your own** in `test/mine/pa1/`: each should catch a different mistake a compiler could make; say in a comment what it prints and which mistake it catches. To check that a test catches its mistake, make that mistake in a copy of your compiler and see the test fail. Staff also run your tests on their own compiler: a test it fails is wrong, and so is an `# ir-` line that depends on the numbers in names, such as `%t3` or `if.end.2`. A test copied from this handout or from `test/` does not count; Exercise 5 below may be one of the three.
-- **Your sessions or your design document.** If you use an AI coding assistant for any part of PA1, use Claude Code or Codex, started in your PA1 folder, and hand in all its sessions: their prompts are graded. If you do not, write `docs/pa1-design.md` yourself instead: about one page, under the headings in the file (values and variables, floor division and modulo, control flow, your tests). A design document written with AI earns no points; staff check.
+- **Your sessions, your design document, or both.** Sessions count if they are Claude Code or Codex sessions started in your PA1 folder. The design document is `docs/pa1-design.md`: about one page, under the headings in the file (values and variables, floor division and modulo, control flow, your tests), written by you; one written with AI earns no points.
 
 ### 8.1 Handing in with OneWorld
 
@@ -591,7 +591,7 @@ oneworld assessment submit   # hand it in
 
 You can hand in more than once; the last one counts. A hand-in after the due time is marked late.
 
-**Grading.** PA1 is worth 5% of your course grade. It is out of 100 points: **60** for your compiler (**15** for each exercise, checked with programs you have not seen), **20** for your three tests, and **20** for the prompts in your sessions or, if you did not use AI, for your design document. Either is judged on how clearly you state the problem, your reasoning, what you check and how, and how you judge answers and results against evidence; length, polish and the number of prompts earn nothing.
+**Grading.** PA1 is worth 5% of your course grade. It is out of 100 points: **60** for your compiler (**15** for each exercise, checked with programs you have not seen), **20** for your three tests, and **20** for your sessions or your design document. Staff grade each one you hand in on its own and keep the higher grade: **Excellent** (20), **Good** (15), **Fair** (10) or **Poor** (5), and 0 if you hand in neither. Sessions are graded mainly on whether your prompts work out the design details, such as where each value is kept, how `//` and `%` must round, and which parts of `and` and `or` must not run; a design document, on how well it explains your design decisions and how you checked them.
 
 ## 9 Practice
 

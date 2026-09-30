@@ -89,5 +89,5 @@ You can hand in more than once; the last one counts.
 
 - **Each assignment has its own OneWorld page and invite code;** its handout says how to join it.
 - **Each assignment gets a new folder:** its `join` downloads its starter code into a new folder, and from PA2 on, `python3 tools/carry.py` brings in your work from the folder of the assignment before.
-- **From PA1 on, 20 of each assignment's 100 points** go to the prompts in your sessions if you use AI, and you must then hand in all of them; if you do not use AI, they go to a design document you write yourself. Each handout says more.
+- **From PA1 on, 20 of each assignment's 100 points** go to your AI sessions or to a design document you write yourself: hand in either or both, and the higher grade counts. Each handout says more.
 - **Help.** Ask on Slack, or come to section or office hours.
