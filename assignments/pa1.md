@@ -591,7 +591,7 @@ oneworld assessment submit   # hand it in
 
 You can hand in more than once; the last one counts. A hand-in after the due time is marked late.
 
-**Grading.** PA1 is worth 5% of your course grade. It is out of 100 points: **60** for your compiler (**15** for each exercise, checked with programs you have not seen), **20** for your three tests, and **20** for your sessions or your design document. Staff grade each one you hand in on its own and keep the higher grade: **Excellent** (20), **Good** (15), **Fair** (10) or **Poor** (5), and 0 if you hand in neither. Sessions are graded mainly on whether your prompts work out the design details, such as where each value is kept, how `//` and `%` must round, and which parts of `and` and `or` must not run; a design document, on how well it explains your design decisions and how you checked them.
+**Grading.** PA1 is worth 5% of your course grade. It is out of 100 points: **60** for your compiler (**15** for each exercise, checked with programs you have not seen), **20** for your three tests, and **20** for your sessions or your design document. Staff grade each one you hand in on its own and keep the higher grade: **Excellent** (20), **Good** (15), **Fair** (10) or **Poor** (5), and 0 if you hand in neither. Sessions are graded mainly on whether your prompts work out the design details, such as where each value is kept, how `//` and `%` must round, and which parts of `and` and `or` must not run; a design document, on how well it explains your design decisions and how you checked them. Short sessions are fine: a few prompts that think through the design are enough.
 
 ## 9 Practice
 
