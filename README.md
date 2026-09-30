@@ -22,11 +22,11 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 
 | Date | Topic | Slides | Reading (EaC 3e) | Out | Due |
 |---|---|---|---|---|---|
-| Mon 9/28 | The big picture | [pdf](lectures/lecture1.pdf) | Ch. 1 | | |
-| Wed 9/30 | Your first compiler |  | Ch. 4.1–4.3 | PA1 | |
+| Mon 9/28 | The big picture | [pdf](lectures/lecture1.pdf) | Ch. 1 | [PA0](assignments/pa0.pdf) | |
+| Wed 9/30 | Your first compiler |  | Ch. 4.1–4.3 | [PA1](assignments/pa1.pdf) | |
 | Mon 10/5 | Variables and control flow |  | Ch. 7.1–7.4 | | |
 | Wed 10/7 | Testing your compiler |  | — | | |
-| Fri 10/9 | | |  | PA2 | **PA1** |
+| Fri 10/9 | | |  | PA2 | **PA0**, **PA1** |
 | Mon 10/12 | Lexing |  | Ch. 2 | | |
 | Wed 10/14 | Parsing I |  | Ch. 3.1–3.3 | | |
 | Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent |  | | | |
@@ -55,14 +55,15 @@ You will build one compiler, in Python, from ChocoPy source to textual LLVM IR c
 
 | PA | Title | Adds to your compiler | Due |
 |---|---|---|---|
-| PA1 | **Compiling Expressions, Variables and Loops to LLVM IR**<br>*Where does each value go?* | Ints and bools, arithmetic with Python's `//` and `%`, comparisons, `and`/`or`/`not`, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
+| PA0 | [**Getting Set Up**](assignments/pa0.pdf)<br>*How do you hand in an assignment?* | Nothing: you get the starter code with OneWorld and hand it in once (not graded) | 10/9 |
+| PA1 | [**Compiling Expressions, Variables and Loops to LLVM IR**](assignments/pa1.pdf)<br>*Where does each value go?* | Ints and bools, arithmetic with Python's `//` and `%`, comparisons, `and`/`or`/`not`, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
 | PA2 | **Your Own Lexer and Parser**<br>*How does text become a tree?* | A lexer with INDENT/DEDENT and a recursive-descent parser whose trees match `ast.parse` on the staff corpus | 10/21 |
 | PA3 | **Functions, Recursion and a Type Checker**<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/2 |
 | PA4 | **Lists and Strings on the Heap**<br>*Where does a value live?* | Heap objects built with `getelementptr`, bounds checks, `None`-safety, `for` loops; hidden differential tests | 11/13 |
 | PA5 | **SSA Construction and Local Optimization**<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/24 |
 | PA6 | **Global Constant Propagation and Dead-Code Elimination**<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; the performance leaderboard | 12/9 |
 
-Assignment handouts will appear under `assignments/` as they are released.
+Handouts are posted in [`assignments/`](assignments/) as they are released, and the course's subset of ChocoPy is specified in [`chocopy/SPEC.md`](chocopy/SPEC.md). You get each assignment's starter code, and hand it in, with [OneWorld](https://oneworldai.com): PA0 walks you through it once, and each assignment's OneWorld link and invite code are posted on Slack. Everything is due at 11:59 pm Pacific on its due date.
 
 ## Grading
 
