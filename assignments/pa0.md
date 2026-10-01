@@ -12,7 +12,7 @@ Every assignment in this course follows the same routine: you get the code with 
 
 ## 1 What you need
 
-- **A computer** running macOS or Linux (Ubuntu 24.04). On Windows, use WSL 2 with Ubuntu 24.04.
+- **A computer** running macOS or Linux. On Windows, use WSL 2.
 - **Claude Code or Codex**, if you plan to use AI: they are the two AI coding assistants whose sessions OneWorld hands in. To install one:
 
 ```sh
