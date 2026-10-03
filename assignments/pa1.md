@@ -65,11 +65,13 @@ The test programs have no type errors, and their numbers never go outside the 32
 
 ### 1.3 Your code
 
-You write three methods of the class `CodeGen`. The starter calls them, in order, for each declaration and statement at the top level of the program, and puts all the IR they write into one function, `@main`. Inside them, `if` and `while` call `self.statement` on each statement of their body, and an operation calls `self.expr` on its parts.
+You write three methods of the class `CodeGen` in `compiler/codegen.py`. Its method `program`, which the starter provides, calls them in order for each declaration and statement at the top level of the program, and puts all the IR they write into one function, `@main`; leave it as it is. Inside your methods, `if` and `while` call `self.statement` on each statement of their body, and an operation calls `self.expr` on its parts.
 
 - `declaration`, for a variable declaration such as `x: int = 5`;
 - `statement`, for a statement such as `x = x + 1` or `while x > 0:`;
 - `expr`, for an expression such as `x + 1`.
+
+This is the class in `compiler/codegen.py`, shortened: the comments above each method are left out, and `...` stands for code the starter already has. Fill in the methods in that file; nothing needs replacing.
 
 ```python
 class CodeGen:
@@ -79,6 +81,15 @@ class CodeGen:
         # TODO(student): You can modify or remove these member variables as you like.
         # ChocoPy variable name -> (slot, ChocoPy type), e.g. "x" -> ("%x.addr", "int")
         self.variables: dict[str, tuple[str, str]] = {}
+
+    def program(self, tree: ast.Module) -> str:
+        for node in tree.body:
+            if isinstance(node, ast.AnnAssign):
+                self.declaration(node)
+            else:
+                self.statement(node)
+        self.module.add_function(self.fn.render("ret i32 0"))
+        return self.module.render()
 
     def declaration(self, node: ast.AnnAssign) -> None:
         raise NotImplementedError("CodeGen.declaration is not implemented.")
