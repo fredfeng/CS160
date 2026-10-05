@@ -24,7 +24,7 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 |---|---|---|---|---|---|
 | Mon 9/28 | The big picture | [pdf](lectures/lecture1.pdf) | Ch. 1 | [PA0](assignments/pa0.pdf) | |
 | Wed 9/30 | Your first compiler | [pdf](lectures/lecture2.pdf) | Ch. 4.1–4.3 | [PA1](assignments/pa1.pdf) | |
-| Mon 10/5 | Variables and control flow |  | Ch. 7.1–7.4 | | |
+| Mon 10/5 | Variables and control flow | [pdf](lectures/lecture3.pdf) | Ch. 7.1–7.4 | | |
 | Wed 10/7 | Testing your compiler |  | — | | |
 | Fri 10/9 | | |  | PA2 | **PA0**, **PA1** |
 | Mon 10/12 | Lexing |  | Ch. 2 | | |
