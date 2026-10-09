@@ -27,8 +27,8 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Mon 10/5 | Variables and control flow | [pdf](lectures/lecture3.pdf) | Ch. 7.1–7.4 | | |
 | Wed 10/7 | Testing your compiler | [pdf](lectures/lecture4.pdf) | — | | |
 | Fri 10/9 | | |  | PA2 | **PA0**, **PA1** |
-| Mon 10/12 | Lexing |  | Ch. 2 | | |
-| Wed 10/14 | Parsing I |  | Ch. 3.1–3.3 | | |
+| Mon 10/12 | Lexing | [pdf](lectures/lecture5.pdf) | Ch. 2 | | |
+| Wed 10/14 | Parsing I | [pdf](lectures/lecture6.pdf) | Ch. 3.1–3.3 | | |
 | Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent |  | | | |
 | Wed 10/21 | Parsing II |  | Ch. 3.3–3.5 | PA3 | **PA2** |
 | Mon 10/26 | Functions and the machine |  | Ch. 6.1–6.5 | | |
