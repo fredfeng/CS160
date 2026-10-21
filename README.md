@@ -30,11 +30,11 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Mon 10/12 | Lexing | [pdf](lectures/lecture5.pdf) | Ch. 2 | | |
 | Wed 10/14 | Parsing I | [pdf](lectures/lecture6.pdf) | Ch. 3.1–3.3 | | |
 | Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent |  | | | |
-| Wed 10/21 | Parsing II |  | Ch. 3.3–3.5 | PA3 | **PA2** |
-| Mon 10/26 | Functions and the machine |  | Ch. 6.1–6.5 | | |
-| Wed 10/28 | Semantic analysis I |  | Ch. 4.5, 5.1–5.4 | | |
-| Mon 11/2 | Semantic analysis II |  | Ch. 5.4–5.5 | PA4 | **PA3** |
-| Wed 11/4 | Runtime organization |  | Ch. 6.6, 7.5–7.6 | | |
+| Wed 10/21 | Parsing II | [pdf](lectures/lecture7.pdf) | Ch. 3.3–3.5 | PA3 | **PA2** |
+| Mon 10/26 | Functions and the machine | [pdf](lectures/lecture8.pdf) | Ch. 6.1–6.5 | | |
+| Wed 10/28 | Semantic analysis I | [pdf](lectures/lecture9.pdf) | Ch. 4.5, 5.1–5.4 | | |
+| Mon 11/2 | Semantic analysis II | [pdf](lectures/lecture10.pdf) | Ch. 5.4–5.5 | PA4 | **PA3** |
+| Wed 11/4 | Runtime organization | [pdf](lectures/lecture11.pdf) | Ch. 6.6, 7.5–7.6 | | |
 | Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout |  | | | |
 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) |  | | | |
 | Fri 11/13 | | |  | | **PA4** |
