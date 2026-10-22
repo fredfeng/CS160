@@ -30,7 +30,7 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Mon 10/12 | Lexing | [pdf](lectures/lecture5.pdf) | Ch. 2 | | |
 | Wed 10/14 | Parsing I | [pdf](lectures/lecture6.pdf) | Ch. 3.1–3.3 | | |
 | Mon 10/19 | **Midterm 1** (in class): the pipeline, reading and writing LLVM IR, testing, lexing, grammars and recursive descent |  | | | |
-| Wed 10/21 | Parsing II | [pdf](lectures/lecture7.pdf) | Ch. 3.3–3.5 | PA3 | **PA2** |
+| Wed 10/21 | Parsing II | [pdf](lectures/lecture7.pdf) | Ch. 3.3–3.5 | [PA3](assignments/pa3.pdf) | **PA2** |
 | Mon 10/26 | Functions and the machine | [pdf](lectures/lecture8.pdf) | Ch. 6.1–6.5 | | |
 | Wed 10/28 | Semantic analysis I | [pdf](lectures/lecture9.pdf) | Ch. 4.5, 5.1–5.4 | | |
 | Mon 11/2 | Semantic analysis II | [pdf](lectures/lecture10.pdf) | Ch. 5.4–5.5 | PA4 | **PA3** |
@@ -58,7 +58,7 @@ You will build one compiler, in Python, from ChocoPy source to textual LLVM IR c
 | PA0 | [**Getting Set Up**](assignments/pa0.pdf)<br>*How do you hand in an assignment?* | Nothing: you get the starter code with OneWorld and hand it in once (not graded) | 10/9 |
 | PA1 | [**Compiling Expressions, Variables and Loops to LLVM IR**](assignments/pa1.pdf)<br>*Where does each value go?* | Ints and bools, arithmetic with Python's `//` and `%`, comparisons, `and`/`or`/`not`, `print`, typed variables, `if`/`while`; front end via `ast.parse` | 10/9 |
 | PA2 | [**Your Own Lexer and Parser**](assignments/pa2.pdf)<br>*How does text become a tree?* | A lexer with INDENT/DEDENT and a recursive-descent parser whose trees match `ast.parse` on the staff corpus | 10/21 |
-| PA3 | **Functions, Recursion and a Type Checker**<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/2 |
+| PA3 | [**Functions, Recursion and a Type Checker**](assignments/pa3.pdf)<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/2 |
 | PA4 | **Lists and Strings on the Heap**<br>*Where does a value live?* | Heap objects built with `getelementptr`, bounds checks, `None`-safety, `for` loops; hidden differential tests | 11/13 |
 | PA5 | **SSA Construction and Local Optimization**<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/24 |
 | PA6 | **Global Constant Propagation and Dead-Code Elimination**<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; the performance leaderboard | 12/9 |
