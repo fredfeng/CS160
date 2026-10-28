@@ -2,7 +2,7 @@
 
 *What does each name mean?*
 
-**Due: Tuesday, November 10, 11:59 pm (Pacific).** Released Wednesday, October 21.
+**Due: Friday, November 6, 11:59 pm (Pacific).** Released Wednesday, October 21.
 
 **What to do:** complete **Exercises 1 to 3** in `compiler/typecheck.py` and `compiler/codegen.py`, and write **three tests** of your own. Hand in your AI sessions, a design document in `docs/pa3-design.md`, or both. Section 7 says how to hand them in.
 
