@@ -36,11 +36,11 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Mon 11/2 | Semantic analysis II | [pdf](lectures/lecture10.pdf) | Ch. 5.4–5.5 | PA4 | |
 | Wed 11/4 | Runtime organization | [pdf](lectures/lecture11.pdf) | Ch. 6.6, 7.5–7.6 | | |
 | Fri 11/6 | | |  | | **PA3** |
-| Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout |  | | PA5 | |
+| Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout |  | | | |
 | Wed 11/11 | *Veterans Day — no lecture* (section: PA4 lab) |  | | | |
-| Mon 11/16 | IRs and SSA |  | Ch. 4.4, 4.6, 9.3 | PA6 | **PA4** |
+| Mon 11/16 | IRs and SSA |  | Ch. 4.4, 4.6, 9.3 | PA5 | **PA4** |
 | Wed 11/18 | Dataflow analysis |  | Ch. 8.1–8.4, 9.1–9.2 | | |
-| Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | | |
+| Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | PA6 | |
 | Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
 | Mon 11/30 | Register allocation and memory management |  | Ch. 13, 6.6 | | **PA5** |
 | Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC |  | | | |
