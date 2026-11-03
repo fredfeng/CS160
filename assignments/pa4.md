@@ -6,7 +6,7 @@
 
 **What to do:** complete **Exercises 1 to 3** in `compiler/typecheck.py` and `compiler/codegen.py`, and write **three tests** of your own. Hand in your AI sessions, a design document in `docs/pa4-design.md`, or both. Section 7 says how to hand them in.
 
-**Lectures:** Semantic analysis II (11/2), Runtime organization (11/4). The section in the week of November 9 is a PA4 lab.
+**Lectures:** Semantic analysis II (11/2), Runtime organization (11/4).
 
 PA3 gave your compiler functions and a type checker. Its variables held numbers or Booleans; a function without a return annotation could also produce `None`. PA4 adds strings, lists and the literal `None`. Take this program:
 
