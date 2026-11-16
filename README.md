@@ -38,7 +38,7 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Fri 11/6 | | |  | | **PA3** |
 | Mon 11/9 | **Midterm 2** (in class): LL/LR parsing theory, calling conventions, type systems, semantics, runtime layout |  | | | |
 | Wed 11/11 | *Veterans Day — no lecture* |  | | | |
-| Mon 11/16 | IRs and SSA |  | Ch. 4.4, 4.6, 9.3 | PA5 | **PA4** |
+| Mon 11/16 | IRs and SSA | [pdf](lectures/lecture12.pdf) | Ch. 4.4, 4.6, 9.3 | PA5 | **PA4** |
 | Wed 11/18 | Dataflow analysis |  | Ch. 8.1–8.4, 9.1–9.2 | | |
 | Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | PA6 | |
 | Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
