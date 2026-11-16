@@ -43,7 +43,7 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | PA6 | |
 | Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
 | Mon 11/30 | Register allocation and memory management |  | Ch. 13, 6.6 | | **PA5** |
-| Wed 12/2 | **Midterm 3** (in class): SSA, dataflow, optimization, register allocation, GC |  | | | |
+| Wed 12/2 | **Midterm 3** (in class): Semantic Analysis through Global Optimization (type systems, semantics, runtime layout, SSA, dataflow, optimization); not register allocation or GC |  | | | |
 | Wed 12/9 | | |  | | **PA6** |
 
 There is no final exam.
@@ -68,12 +68,17 @@ Handouts are posted in [`assignments/`](assignments/) as they are released, and 
 
 | Component | Weight |
 |---|---|
-| Three in-class midterms | 60% (20% each) |
+| Midterms 1 and 3 | 60% (30% each) |
 | Six programming assignments | 30% (5% each) |
 | In-class worksheets | 10% |
+| Extra credit: Midterm 2 | up to +5% |
 | Extra credit: top-5 Slack participants | +2% |
 
-**Exams.** There will be three closed-book, pencil-and-paper midterm exams, each worth 20% of the grade, held during lecture on Monday October 19, Monday November 9, and Wednesday December 2. There is no final exam.
+**Exams.** There are three closed-book, pencil-and-paper midterm exams, held during lecture on Monday October 19, Monday November 9, and Wednesday December 2. There is no final exam.
+
+- **Midterm 1** and **Midterm 3** are each worth 30% of the grade.
+- **Midterm 2** no longer counts toward the exam grade. It is extra credit instead, worth up to 5%: your score out of 100 is divided by 20 (e.g., 80/100 gives +4%). If you did not take Midterm 2, you get no extra credit and no penalty.
+- **Midterm 3** covers Semantic Analysis through Global Optimization. Register Allocation (the final lecture) is not included.
 
 **Cheat sheet.** You may bring a "cheat sheet" comprising a single letter-sized sheet of paper (you can use both sides if you wish).
 
