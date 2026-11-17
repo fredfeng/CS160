@@ -59,7 +59,7 @@ You will build one compiler, in Python, from ChocoPy source to textual LLVM IR c
 | PA2 | [**Your Own Lexer and Parser**](assignments/pa2.pdf)<br>*How does text become a tree?* | A lexer with INDENT/DEDENT and a recursive-descent parser whose trees match `ast.parse` on the staff corpus | 10/21 |
 | PA3 | [**Functions, Recursion and a Type Checker**](assignments/pa3.pdf)<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/6 |
 | PA4 | [**Lists and Strings on the Heap**](assignments/pa4.pdf)<br>*Where does a value live?* | Heap objects built with `getelementptr`, bounds checks, `None`-safety, `for` loops; hidden differential tests | 11/16 |
-| PA5 | **SSA Construction and Local Optimization**<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/30 |
+| PA5 | [**SSA Construction and Local Optimization**](assignments/pa5.pdf)<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/30 |
 | PA6 | **Global Constant Propagation and Dead-Code Elimination**<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; the performance leaderboard | 12/9 |
 
 Handouts are posted in [`assignments/`](assignments/) as they are released, and the course's subset of ChocoPy is specified in [`chocopy/SPEC.md`](chocopy/SPEC.md). You get each assignment's starter code, and hand it in, with [OneWorld](https://oneworldai.com): PA0 walks you through it once, and each assignment's OneWorld link and invite code are posted on Slack. Everything is due at 11:59 pm Pacific on its due date.
