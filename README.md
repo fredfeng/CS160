@@ -40,7 +40,7 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Wed 11/11 | *Veterans Day — no lecture* |  | | | |
 | Mon 11/16 | IRs and SSA | [pdf](lectures/lecture12.pdf) | Ch. 4.4, 4.6, 9.3 | [PA5](assignments/pa5.pdf) | **PA4** |
 | Wed 11/18 | Dataflow analysis | [pdf](lectures/lecture13.pdf) | Ch. 8.1–8.4, 9.1–9.2 | | |
-| Mon 11/23 | Global optimization |  | Ch. 8.5–8.7, 10 | PA6 | |
+| Mon 11/23 | Global optimization | [pdf](lectures/lecture14.pdf) | Ch. 8.5–8.7, 10 | PA6 | |
 | Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
 | Mon 11/30 | Register allocation and memory management |  | Ch. 13, 6.6 | | [**PA5**](assignments/pa5.pdf) |
 | Wed 12/2 | **Midterm 3** (in class): Semantic Analysis through Global Optimization (type systems, semantics, runtime layout, SSA, dataflow, optimization); not register allocation or GC |  | | | |
