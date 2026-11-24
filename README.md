@@ -40,11 +40,11 @@ Dates follow the UCSB Fall 2026 calendar (instruction 9/24–12/4). No lecture o
 | Wed 11/11 | *Veterans Day — no lecture* |  | | | |
 | Mon 11/16 | IRs and SSA | [pdf](lectures/lecture12.pdf) | Ch. 4.4, 4.6, 9.3 | [PA5](assignments/pa5.pdf) | **PA4** |
 | Wed 11/18 | Dataflow analysis | [pdf](lectures/lecture13.pdf) | Ch. 8.1–8.4, 9.1–9.2 | | |
-| Mon 11/23 | Global optimization | [pdf](lectures/lecture14.pdf) | Ch. 8.5–8.7, 10 | PA6 | |
+| Mon 11/23 | Global optimization | [pdf](lectures/lecture14.pdf) | Ch. 8.5–8.7, 10 | [PA6](assignments/pa6.pdf) | |
 | Wed 11/25 | *No lecture (Thanksgiving week)* |  | | | |
 | Mon 11/30 | Register allocation and memory management |  | Ch. 13, 6.6 | | [**PA5**](assignments/pa5.pdf) |
 | Wed 12/2 | **Midterm 3** (in class): Semantic Analysis through Global Optimization (type systems, semantics, runtime layout, SSA, dataflow, optimization); not register allocation or GC |  | | | |
-| Wed 12/9 | | |  | | **PA6** |
+| Wed 12/9 | | |  | | [**PA6**](assignments/pa6.pdf) |
 
 There is no final exam.
 
@@ -60,7 +60,7 @@ You will build one compiler, in Python, from ChocoPy source to textual LLVM IR c
 | PA3 | [**Functions, Recursion and a Type Checker**](assignments/pa3.pdf)<br>*What does each name mean?* | Functions, recursion and global variables; symbol tables and a type checker implemented from the ChocoPy typing rules | 11/6 |
 | PA4 | [**Lists and Strings on the Heap**](assignments/pa4.pdf)<br>*Where does a value live?* | Heap objects built with `getelementptr`, bounds checks, `None`-safety, `for` loops; hidden differential tests | 11/16 |
 | PA5 | [**SSA Construction and Local Optimization**](assignments/pa5.pdf)<br>*What must survive a loop?* | A CFG-based IR, dominators, SSA construction (your own `mem2reg`), local value numbering | 11/30 |
-| PA6 | **Global Constant Propagation and Dead-Code Elimination**<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; the performance leaderboard | 12/9 |
+| PA6 | [**Global Constant Propagation and Dead-Code Elimination**](assignments/pa6.pdf)<br>*When is it safe to delete code?* | Sparse conditional constant propagation and dead-code elimination; optional performance benchmarks | 12/9 |
 
 Handouts are posted in [`assignments/`](assignments/) as they are released, and the course's subset of ChocoPy is specified in [`chocopy/SPEC.md`](chocopy/SPEC.md). You get each assignment's starter code, and hand it in, with [OneWorld](https://oneworldai.com): PA0 walks you through it once, and each assignment's OneWorld link and invite code are posted on Slack. Everything is due at 11:59 pm Pacific on its due date.
 
